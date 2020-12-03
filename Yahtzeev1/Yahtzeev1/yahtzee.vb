@@ -17,6 +17,8 @@
         ListBox1.Items.Add("Chance")
         ListBox1.Items.Add("YAHTZEE")
         ListBox1.Items.Add("TOTAL")
+        'wow look this is a change to the code
+        'look it is yet another comment that I have added
     End Sub
 
     Private Sub Button21_Click(sender As Object, e As EventArgs) Handles Button21.Click
