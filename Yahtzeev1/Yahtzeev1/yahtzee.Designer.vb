@@ -196,6 +196,7 @@ Partial Class yahtzee
         Me.grpMenu.TabIndex = 14
         Me.grpMenu.TabStop = False
         Me.grpMenu.Text = "Menu"
+        Me.grpMenu.Visible = False
         '
         'btnReset
         '

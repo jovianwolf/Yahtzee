@@ -2,6 +2,30 @@
     'boolean to determine if the menu is shown or not
     Dim blnMenu As Boolean = False
 
+    Private Sub yahtzee_Load(sender As Object, e As EventArgs) Handles Me.Load
+
+
+        'Moved the initialization of the scoreboard into on load event
+        lstScores.Items.Add("SCORES") '& ControlChars.Tab & ControlChars.Tab & "You" & ControlChars.Tab & "AI")
+        lstScores.Items.Add("Ones")
+        lstScores.Items.Add("Twos")
+        lstScores.Items.Add("Threes")
+        lstScores.Items.Add("Fours")
+        lstScores.Items.Add("Fives")
+        lstScores.Items.Add("Sixes")
+        lstScores.Items.Add("Sum")
+        lstScores.Items.Add("Bonus")
+        lstScores.Items.Add("3-kind")
+        lstScores.Items.Add("4-kind")
+        lstScores.Items.Add("House")
+        lstScores.Items.Add("S Straight")
+        lstScores.Items.Add("L Straight")
+        lstScores.Items.Add("Chance")
+        lstScores.Items.Add("YAHTZEE")
+        lstScores.Items.Add("TOTAL")
+
+    End Sub
+
     Private Sub btnMenu_Click(sender As Object, e As EventArgs) Handles btnMenu.Click
         'menu button handler
         If blnMenu = False Then
@@ -38,6 +62,7 @@
         For intX = 0 To intDice.Length - 1
             intDice(intX) = RandomizeDice(intX)
             Randomize(Now.Millisecond)
+            delay()
         Next
 
         MsgBox("Dice rolls are as follows 1-5: " & " " & CStr(intDice(0)) & ", " & CStr(intDice(1)) & ", " & CStr(intDice(2)) & ", " & CStr(intDice(3)) & ", " & CStr(intDice(4)))
@@ -53,28 +78,11 @@
         Return intDieChoice
     End Function
 
-    Private Sub yahtzee_Load(sender As Object, e As EventArgs) Handles Me.Load
-
-
-        'Moved the initialization of the scoreboard into on load event
-        lstScores.Items.Add("SCORES") '& ControlChars.Tab & ControlChars.Tab & "You" & ControlChars.Tab & "AI")
-        lstScores.Items.Add("Ones")
-        lstScores.Items.Add("Twos")
-        lstScores.Items.Add("Threes")
-        lstScores.Items.Add("Fours")
-        lstScores.Items.Add("Fives")
-        lstScores.Items.Add("Sixes")
-        lstScores.Items.Add("Sum")
-        lstScores.Items.Add("Bonus")
-        lstScores.Items.Add("3-kind")
-        lstScores.Items.Add("4-kind")
-        lstScores.Items.Add("House")
-        lstScores.Items.Add("S Straight")
-        lstScores.Items.Add("L Straight")
-        lstScores.Items.Add("Chance")
-        lstScores.Items.Add("YAHTZEE")
-        lstScores.Items.Add("TOTAL")
-
+    Sub delay()
+        Dim count As Integer = 1
+        For count = 1 To 10000000
+            count = count + 1
+        Next
     End Sub
 
     Private Sub btnRollDie1_Click(sender As Object, e As EventArgs) Handles btnRollDie1.Click
