@@ -2,7 +2,7 @@
     'boolean to determine if the menu is shown or not
     Dim blnMenu As Boolean = False
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnRollDie1.Click
         lstScores.Items.Add("SCORES") '& ControlChars.Tab & ControlChars.Tab & "You" & ControlChars.Tab & "AI")
         lstScores.Items.Add("Ones")
         lstScores.Items.Add("Twos")
