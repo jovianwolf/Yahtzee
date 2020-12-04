@@ -4,9 +4,6 @@
 
 
 
-    Private Sub btnRollDie1_Click(sender As Object, e As EventArgs) Handles btnRollDie1.Click
-
-    End Sub
 
 
     Private Sub btnMenu_Click(sender As Object, e As EventArgs) Handles btnMenu.Click
@@ -64,5 +61,65 @@
         lstScores.Items.Add("YAHTZEE")
         lstScores.Items.Add("TOTAL")
 
+    End Sub
+
+    Private Sub btnRollDie1_Click(sender As Object, e As EventArgs) Handles btnRollDie1.Click
+        'Button Handler to keep First die
+        btnKeepDie1.Visible = True
+        btnRollDie1.Visible = False
+    End Sub
+
+    Private Sub btnRollDie2_Click(sender As Object, e As EventArgs) Handles btnRollDie2.Click
+        'Button Handler to keep Second die
+        btnKeepDie2.Visible = True
+        btnRollDie2.Visible = False
+    End Sub
+
+    Private Sub btnRollDie3_Click(sender As Object, e As EventArgs) Handles btnRollDie3.Click
+        'Button Handler to keep Third die
+        btnKeepDie3.Visible = True
+        btnRollDie3.Visible = False
+    End Sub
+
+    Private Sub btnRollDie4_Click(sender As Object, e As EventArgs) Handles btnRollDie4.Click
+        'Button Handler to keep Fourth die
+        btnKeepDie4.Visible = True
+        btnRollDie4.Visible = False
+    End Sub
+
+    Private Sub btnRollDie5_Click(sender As Object, e As EventArgs) Handles btnRollDie5.Click
+        'Button Handler to keep Fifth die
+        btnKeepDie5.Visible = True
+        btnRollDie5.Visible = False
+    End Sub
+
+    Private Sub btnKeepDie1_Click(sender As Object, e As EventArgs) Handles btnKeepDie1.Click
+        'Button Handler to roll First die
+        btnKeepDie1.Visible = False
+        btnRollDie1.Visible = True
+    End Sub
+
+    Private Sub btnKeepDie2_Click(sender As Object, e As EventArgs) Handles btnKeepDie2.Click
+        'Button Handler to roll Second die
+        btnKeepDie2.Visible = False
+        btnRollDie2.Visible = True
+    End Sub
+
+    Private Sub btnKeepDie3_Click(sender As Object, e As EventArgs) Handles btnKeepDie3.Click
+        'Button Handler to roll Third die
+        btnKeepDie3.Visible = False
+        btnRollDie3.Visible = True
+    End Sub
+
+    Private Sub btnKeepDie4_Click(sender As Object, e As EventArgs) Handles btnKeepDie4.Click
+        'Button Handler to roll Fourth die
+        btnKeepDie4.Visible = False
+        btnRollDie4.Visible = True
+    End Sub
+
+    Private Sub btnKeepDie5_Click(sender As Object, e As EventArgs) Handles btnKeepDie5.Click
+        'Button Handler to roll Fifth die
+        btnKeepDie5.Visible = False
+        btnRollDie5.Visible = True
     End Sub
 End Class

@@ -80,7 +80,6 @@ Partial Class yahtzee
         Me.btnRollDie3.TabIndex = 2
         Me.btnRollDie3.Text = "(dice visual)"
         Me.btnRollDie3.UseVisualStyleBackColor = True
-        Me.btnRollDie3.Visible = False
         '
         'btnRollDie5
         '
@@ -90,7 +89,6 @@ Partial Class yahtzee
         Me.btnRollDie5.TabIndex = 4
         Me.btnRollDie5.Text = "(dice visual)"
         Me.btnRollDie5.UseVisualStyleBackColor = True
-        Me.btnRollDie5.Visible = False
         '
         'grpDice
         '
@@ -119,6 +117,7 @@ Partial Class yahtzee
         Me.btnKeepDie5.TabIndex = 9
         Me.btnKeepDie5.Text = "(dice visual)"
         Me.btnKeepDie5.UseVisualStyleBackColor = True
+        Me.btnKeepDie5.Visible = False
         '
         'btnKeepDie4
         '
@@ -138,6 +137,7 @@ Partial Class yahtzee
         Me.btnKeepDie3.TabIndex = 7
         Me.btnKeepDie3.Text = "(dice visual)"
         Me.btnKeepDie3.UseVisualStyleBackColor = True
+        Me.btnKeepDie3.Visible = False
         '
         'btnKeepDie2
         '

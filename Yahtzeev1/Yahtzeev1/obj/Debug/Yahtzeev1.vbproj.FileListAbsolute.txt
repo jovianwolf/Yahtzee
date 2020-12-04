@@ -22,3 +22,15 @@ C:\Users\manof\Source\Repos\jovianwolf\Yahtzee\Yahtzeev1\Yahtzeev1\obj\Debug\Yah
 C:\Users\manof\Source\Repos\jovianwolf\Yahtzee\Yahtzeev1\Yahtzeev1\obj\Debug\Yahtzeev1.exe
 C:\Users\manof\Source\Repos\jovianwolf\Yahtzee\Yahtzeev1\Yahtzeev1\obj\Debug\Yahtzeev1.xml
 C:\Users\manof\Source\Repos\jovianwolf\Yahtzee\Yahtzeev1\Yahtzeev1\obj\Debug\Yahtzeev1.pdb
+C:\Users\pareyn\Source\Repos\jovianwolf\Yahtzee\Yahtzeev1\Yahtzeev1\bin\Debug\Yahtzeev1.exe.config
+C:\Users\pareyn\Source\Repos\jovianwolf\Yahtzee\Yahtzeev1\Yahtzeev1\bin\Debug\Yahtzeev1.exe
+C:\Users\pareyn\Source\Repos\jovianwolf\Yahtzee\Yahtzeev1\Yahtzeev1\bin\Debug\Yahtzeev1.pdb
+C:\Users\pareyn\Source\Repos\jovianwolf\Yahtzee\Yahtzeev1\Yahtzeev1\bin\Debug\Yahtzeev1.xml
+C:\Users\pareyn\Source\Repos\jovianwolf\Yahtzee\Yahtzeev1\Yahtzeev1\obj\Debug\Yahtzeev1.vbprojAssemblyReference.cache
+C:\Users\pareyn\Source\Repos\jovianwolf\Yahtzee\Yahtzeev1\Yahtzeev1\obj\Debug\Yahtzeev1.Resources.resources
+C:\Users\pareyn\Source\Repos\jovianwolf\Yahtzee\Yahtzeev1\Yahtzeev1\obj\Debug\Yahtzeev1.yahtzee.resources
+C:\Users\pareyn\Source\Repos\jovianwolf\Yahtzee\Yahtzeev1\Yahtzeev1\obj\Debug\Yahtzeev1.vbproj.GenerateResource.cache
+C:\Users\pareyn\Source\Repos\jovianwolf\Yahtzee\Yahtzeev1\Yahtzeev1\obj\Debug\Yahtzeev1.vbproj.CoreCompileInputs.cache
+C:\Users\pareyn\Source\Repos\jovianwolf\Yahtzee\Yahtzeev1\Yahtzeev1\obj\Debug\Yahtzeev1.exe
+C:\Users\pareyn\Source\Repos\jovianwolf\Yahtzee\Yahtzeev1\Yahtzeev1\obj\Debug\Yahtzeev1.xml
+C:\Users\pareyn\Source\Repos\jovianwolf\Yahtzee\Yahtzeev1\Yahtzeev1\obj\Debug\Yahtzeev1.pdb
