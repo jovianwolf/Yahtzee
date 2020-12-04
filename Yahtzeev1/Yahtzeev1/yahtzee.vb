@@ -39,6 +39,9 @@
         Dim intRandomDice4 As Integer
         Dim intRandomDice5 As Integer
 
+        'On roll event to randomize the seed for dice throw
+        Randomize()
+
         'Setting a random number on roll to each of the 5 dice
         '!!need to add logic to catch if the button is visible then to roll for that dice
         intRandomDice1 = CInt(Math.Ceiling(Rnd(0) * 7))
@@ -47,13 +50,13 @@
         intRandomDice4 = CInt(Math.Ceiling(Rnd(0) * 7))
         intRandomDice5 = CInt(Math.Ceiling(Rnd(0) * 7))
 
-
+        'this is for debug to show what random dice are chosen
+        MsgBox("Dice rolls are as follows 1-5: " & " " & CStr(intRandomDice1) & ", " & CStr(intRandomDice2) & ", " & CStr(intRandomDice3) & ", " & CStr(intRandomDice4) & ", " & CStr(intRandomDice5))
 
     End Sub
 
     Private Sub yahtzee_Load(sender As Object, e As EventArgs) Handles Me.Load
-        'On load event to randomize the seed for dice throw
-        Randomize()
+
 
         'Moved the initialization of the scoreboard into on load event
         lstScores.Items.Add("SCORES") '& ControlChars.Tab & ControlChars.Tab & "You" & ControlChars.Tab & "AI")
