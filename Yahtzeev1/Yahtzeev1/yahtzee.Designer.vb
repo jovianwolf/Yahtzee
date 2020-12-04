@@ -27,7 +27,7 @@ Partial Class yahtzee
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.grpDice = New System.Windows.Forms.GroupBox()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
@@ -44,11 +44,15 @@ Partial Class yahtzee
         Me.Button18 = New System.Windows.Forms.Button()
         Me.Button19 = New System.Windows.Forms.Button()
         Me.Button20 = New System.Windows.Forms.Button()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
-        Me.Button21 = New System.Windows.Forms.Button()
-        Me.Button22 = New System.Windows.Forms.Button()
-        Me.GroupBox1.SuspendLayout()
+        Me.lstScores = New System.Windows.Forms.ListBox()
+        Me.btnRoll = New System.Windows.Forms.Button()
+        Me.btnMenu = New System.Windows.Forms.Button()
+        Me.grpMenu = New System.Windows.Forms.GroupBox()
+        Me.btnReset = New System.Windows.Forms.Button()
+        Me.btnExit = New System.Windows.Forms.Button()
+        Me.grpDice.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        Me.grpMenu.SuspendLayout()
         Me.SuspendLayout()
         '
         'Button1
@@ -98,24 +102,24 @@ Partial Class yahtzee
         Me.Button5.UseVisualStyleBackColor = True
         Me.Button5.Visible = False
         '
-        'GroupBox1
+        'grpDice
         '
-        Me.GroupBox1.Controls.Add(Me.Button6)
-        Me.GroupBox1.Controls.Add(Me.Button7)
-        Me.GroupBox1.Controls.Add(Me.Button8)
-        Me.GroupBox1.Controls.Add(Me.Button9)
-        Me.GroupBox1.Controls.Add(Me.Button10)
-        Me.GroupBox1.Controls.Add(Me.Button5)
-        Me.GroupBox1.Controls.Add(Me.Button3)
-        Me.GroupBox1.Controls.Add(Me.Button4)
-        Me.GroupBox1.Controls.Add(Me.Button2)
-        Me.GroupBox1.Controls.Add(Me.Button1)
-        Me.GroupBox1.Location = New System.Drawing.Point(233, 168)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(300, 150)
-        Me.GroupBox1.TabIndex = 5
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Player Dice"
+        Me.grpDice.Controls.Add(Me.Button6)
+        Me.grpDice.Controls.Add(Me.Button7)
+        Me.grpDice.Controls.Add(Me.Button8)
+        Me.grpDice.Controls.Add(Me.Button9)
+        Me.grpDice.Controls.Add(Me.Button10)
+        Me.grpDice.Controls.Add(Me.Button5)
+        Me.grpDice.Controls.Add(Me.Button3)
+        Me.grpDice.Controls.Add(Me.Button4)
+        Me.grpDice.Controls.Add(Me.Button2)
+        Me.grpDice.Controls.Add(Me.Button1)
+        Me.grpDice.Location = New System.Drawing.Point(230, 150)
+        Me.grpDice.Name = "grpDice"
+        Me.grpDice.Size = New System.Drawing.Size(300, 150)
+        Me.grpDice.TabIndex = 5
+        Me.grpDice.TabStop = False
+        Me.grpDice.Text = "Dice"
         '
         'Button6
         '
@@ -177,7 +181,7 @@ Partial Class yahtzee
         Me.GroupBox2.Controls.Add(Me.Button18)
         Me.GroupBox2.Controls.Add(Me.Button19)
         Me.GroupBox2.Controls.Add(Me.Button20)
-        Me.GroupBox2.Location = New System.Drawing.Point(233, 12)
+        Me.GroupBox2.Location = New System.Drawing.Point(347, 300)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(300, 150)
         Me.GroupBox2.TabIndex = 10
@@ -290,47 +294,78 @@ Partial Class yahtzee
         Me.Button20.UseVisualStyleBackColor = True
         Me.Button20.Visible = False
         '
-        'ListBox1
+        'lstScores
         '
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(34, 58)
-        Me.ListBox1.MultiColumn = True
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(173, 303)
-        Me.ListBox1.TabIndex = 11
+        Me.lstScores.FormattingEnabled = True
+        Me.lstScores.Location = New System.Drawing.Point(34, 58)
+        Me.lstScores.MultiColumn = True
+        Me.lstScores.Name = "lstScores"
+        Me.lstScores.Size = New System.Drawing.Size(173, 303)
+        Me.lstScores.TabIndex = 11
         '
-        'Button21
+        'btnRoll
         '
-        Me.Button21.Location = New System.Drawing.Point(539, 187)
-        Me.Button21.Name = "Button21"
-        Me.Button21.Size = New System.Drawing.Size(75, 23)
-        Me.Button21.TabIndex = 12
-        Me.Button21.Text = "Roll!"
-        Me.Button21.UseVisualStyleBackColor = True
+        Me.btnRoll.Location = New System.Drawing.Point(455, 121)
+        Me.btnRoll.Name = "btnRoll"
+        Me.btnRoll.Size = New System.Drawing.Size(75, 23)
+        Me.btnRoll.TabIndex = 12
+        Me.btnRoll.Text = "Roll!"
+        Me.btnRoll.UseVisualStyleBackColor = True
         '
-        'Button22
+        'btnMenu
         '
-        Me.Button22.Location = New System.Drawing.Point(539, 286)
-        Me.Button22.Name = "Button22"
-        Me.Button22.Size = New System.Drawing.Size(75, 23)
-        Me.Button22.TabIndex = 13
-        Me.Button22.Text = "Menu"
-        Me.Button22.UseVisualStyleBackColor = True
+        Me.btnMenu.Location = New System.Drawing.Point(230, 121)
+        Me.btnMenu.Name = "btnMenu"
+        Me.btnMenu.Size = New System.Drawing.Size(75, 23)
+        Me.btnMenu.TabIndex = 13
+        Me.btnMenu.Text = "Menu"
+        Me.btnMenu.UseVisualStyleBackColor = True
+        '
+        'grpMenu
+        '
+        Me.grpMenu.Controls.Add(Me.btnReset)
+        Me.grpMenu.Controls.Add(Me.btnExit)
+        Me.grpMenu.Location = New System.Drawing.Point(260, 300)
+        Me.grpMenu.Name = "grpMenu"
+        Me.grpMenu.Size = New System.Drawing.Size(88, 150)
+        Me.grpMenu.TabIndex = 14
+        Me.grpMenu.TabStop = False
+        Me.grpMenu.Text = "Menu"
+        '
+        'btnReset
+        '
+        Me.btnReset.Location = New System.Drawing.Point(6, 48)
+        Me.btnReset.Name = "btnReset"
+        Me.btnReset.Size = New System.Drawing.Size(75, 23)
+        Me.btnReset.TabIndex = 1
+        Me.btnReset.Text = "Reset Game"
+        Me.btnReset.UseVisualStyleBackColor = True
+        '
+        'btnExit
+        '
+        Me.btnExit.Location = New System.Drawing.Point(6, 19)
+        Me.btnExit.Name = "btnExit"
+        Me.btnExit.Size = New System.Drawing.Size(75, 23)
+        Me.btnExit.TabIndex = 0
+        Me.btnExit.Text = "Exit"
+        Me.btnExit.UseVisualStyleBackColor = True
         '
         'yahtzee
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.Button22)
-        Me.Controls.Add(Me.Button21)
-        Me.Controls.Add(Me.ListBox1)
+        Me.Controls.Add(Me.grpMenu)
+        Me.Controls.Add(Me.btnMenu)
+        Me.Controls.Add(Me.btnRoll)
+        Me.Controls.Add(Me.lstScores)
         Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.grpDice)
         Me.Name = "yahtzee"
         Me.Text = "Yahtzee"
-        Me.GroupBox1.ResumeLayout(False)
+        Me.grpDice.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
+        Me.grpMenu.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -340,7 +375,7 @@ Partial Class yahtzee
     Friend WithEvents Button3 As Button
     Friend WithEvents Button4 As Button
     Friend WithEvents Button5 As Button
-    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents grpDice As GroupBox
     Friend WithEvents Button6 As Button
     Friend WithEvents Button7 As Button
     Friend WithEvents Button8 As Button
@@ -357,7 +392,10 @@ Partial Class yahtzee
     Friend WithEvents Button18 As Button
     Friend WithEvents Button19 As Button
     Friend WithEvents Button20 As Button
-    Friend WithEvents ListBox1 As ListBox
-    Friend WithEvents Button21 As Button
-    Friend WithEvents Button22 As Button
+    Friend WithEvents lstScores As ListBox
+    Friend WithEvents btnRoll As Button
+    Friend WithEvents btnMenu As Button
+    Friend WithEvents grpMenu As GroupBox
+    Friend WithEvents btnReset As Button
+    Friend WithEvents btnExit As Button
 End Class
