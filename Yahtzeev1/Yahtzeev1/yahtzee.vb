@@ -2,10 +2,6 @@
     'boolean to determine if the menu is shown or not
     Dim blnMenu As Boolean = False
 
-
-
-
-
     Private Sub btnMenu_Click(sender As Object, e As EventArgs) Handles btnMenu.Click
         'menu button handler
         If blnMenu = False Then
@@ -34,7 +30,24 @@
     End Sub
 
     Private Sub btnRoll_Click(sender As Object, e As EventArgs) Handles btnRoll.Click
-        Dim intDice(1, 2, 3, 4, 5, 6) As Integer
+        'Dim intDice(1, 2, 3, 4, 5, 6) As Integer
+
+        'Declare 5 integer vars to store the dice roll in for each die
+        Dim intRandomDice1 As Integer
+        Dim intRandomDice2 As Integer
+        Dim intRandomDice3 As Integer
+        Dim intRandomDice4 As Integer
+        Dim intRandomDice5 As Integer
+
+        'Setting a random number on roll to each of the 5 dice
+        '!!need to add logic to catch if the button is visible then to roll for that dice
+        intRandomDice1 = CInt(Math.Ceiling(Rnd(0) * 7))
+        intRandomDice2 = CInt(Math.Ceiling(Rnd(0) * 7))
+        intRandomDice3 = CInt(Math.Ceiling(Rnd(0) * 7))
+        intRandomDice4 = CInt(Math.Ceiling(Rnd(0) * 7))
+        intRandomDice5 = CInt(Math.Ceiling(Rnd(0) * 7))
+
+
 
     End Sub
 
