@@ -30,30 +30,28 @@
     End Sub
 
     Private Sub btnRoll_Click(sender As Object, e As EventArgs) Handles btnRoll.Click
-        'Dim intDice(1, 2, 3, 4, 5, 6) As Integer
+        'Will need to change this to be an array that can dynamically change depending on the visibility of the buttons
+        'Example, if user is only re-rolling 2 dice, we shouldn't roll 6 randoms
+        Dim intDice(6) As Integer
 
-        'Declare 5 integer vars to store the dice roll in for each die
-        Dim intRandomDice1 As Integer
-        Dim intRandomDice2 As Integer
-        Dim intRandomDice3 As Integer
-        Dim intRandomDice4 As Integer
-        Dim intRandomDice5 As Integer
+        'Third attempt at randomizing via array using a function call
+        For intX = 0 To intDice.Length - 1
+            intDice(intX) = RandomizeDice(intX)
+            Randomize(Now.Millisecond)
+        Next
 
-        'On roll event to randomize the seed for dice throw
-        Randomize()
-
-        'Setting a random number on roll to each of the 5 dice
-        '!!need to add logic to catch if the button is visible then to roll for that dice
-        intRandomDice1 = CInt(Math.Ceiling(Rnd(0) * 7))
-        intRandomDice2 = CInt(Math.Ceiling(Rnd(0) * 7))
-        intRandomDice3 = CInt(Math.Ceiling(Rnd(0) * 7))
-        intRandomDice4 = CInt(Math.Ceiling(Rnd(0) * 7))
-        intRandomDice5 = CInt(Math.Ceiling(Rnd(0) * 7))
-
-        'this is for debug to show what random dice are chosen
-        MsgBox("Dice rolls are as follows 1-5: " & " " & CStr(intRandomDice1) & ", " & CStr(intRandomDice2) & ", " & CStr(intRandomDice3) & ", " & CStr(intRandomDice4) & ", " & CStr(intRandomDice5))
+        MsgBox("Dice rolls are as follows 1-5: " & " " & CStr(intDice(0)) & ", " & CStr(intDice(1)) & ", " & CStr(intDice(2)) & ", " & CStr(intDice(3)) & ", " & CStr(intDice(4)))
 
     End Sub
+
+    Function RandomizeDice(intDie) As Integer
+        Dim intDieChoice As Integer
+
+        intDieChoice = CInt(Math.Ceiling(Rnd(0) * 6))
+        Randomize(Now.Millisecond)
+
+        Return intDieChoice
+    End Function
 
     Private Sub yahtzee_Load(sender As Object, e As EventArgs) Handles Me.Load
 
