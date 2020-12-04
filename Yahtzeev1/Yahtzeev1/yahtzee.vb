@@ -33,6 +33,8 @@
             lstScores.Hide()
             grpDice.Hide()
             btnRoll.Hide()
+            lblKeep.Hide()
+            lblRoll.Hide()
             grpMenu.Show()
             'set menu group to correct position (since it's under the dice group in the design viewer for ease of access)
             grpMenu.Location = New Point(230, 150)
@@ -43,6 +45,8 @@
             lstScores.Show()
             grpDice.Show()
             btnRoll.Show()
+            lblKeep.Show()
+            lblRoll.Show()
             grpMenu.Hide()
             'swithc boolean so handler knows that menu is off
             blnMenu = False
