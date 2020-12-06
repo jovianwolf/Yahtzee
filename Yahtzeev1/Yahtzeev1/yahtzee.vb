@@ -62,6 +62,13 @@
         'Example, if user is only re-rolling 2 dice, we shouldn't roll 6 randoms
         Dim intDice(6) As Integer
 
+        'Adding variables to keep track of player roll choice
+        Dim blnRollDie1 As Boolean = True
+        Dim blnRollDie2 As Boolean = True
+        Dim blnRollDie3 As Boolean = True
+        Dim blnRollDie4 As Boolean = True
+        Dim blnRollDie5 As Boolean = True
+
         'Third attempt at randomizing via array using a function call
         For intX = 0 To intDice.Length - 1
             intDice(intX) = RandomizeDice(intX)
