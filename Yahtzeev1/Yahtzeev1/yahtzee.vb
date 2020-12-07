@@ -63,20 +63,63 @@
         Dim intDice(6) As Integer
 
         'Adding variables to keep track of player roll choice
-        Dim blnRollDie1 As Boolean = True
-        Dim blnRollDie2 As Boolean = True
-        Dim blnRollDie3 As Boolean = True
-        Dim blnRollDie4 As Boolean = True
-        Dim blnRollDie5 As Boolean = True
+        Dim blnRollDie1 As Boolean
+        Dim blnRollDie2 As Boolean
+        Dim blnRollDie3 As Boolean
+        Dim blnRollDie4 As Boolean
+        Dim blnRollDie5 As Boolean
 
-        'Third attempt at randomizing via array using a function call
-        For intX = 0 To intDice.Length - 1
-            intDice(intX) = RandomizeDice(intX)
-            Randomize(Now.Millisecond)
-            delay()
+        If btnRollDie1.Visible = True Then
+            blnRollDie1 = True
+        Else
+            blnRollDie1 = False
+        End If
+
+        If btnRollDie2.Visible = True Then
+            blnRollDie2 = True
+        Else
+            blnRollDie1 = False
+        End If
+
+        If btnRollDie3.Visible = True Then
+            blnRollDie3 = True
+        Else
+            blnRollDie1 = False
+        End If
+
+        If btnRollDie4.Visible = True Then
+            blnRollDie4 = True
+        Else
+            blnRollDie1 = False
+        End If
+
+        If btnRollDie5.Visible = True Then
+            blnRollDie5 = True
+        Else
+            blnRollDie1 = False
+        End If
+
+        'Created an array to keep all 5 roll choices after the If statements to properly populate the array
+        Dim blnDiceRoll() As Boolean = {blnRollDie1, blnRollDie2, blnRollDie3, blnRollDie4, blnRollDie5}
+
+        'Array of buttons to add the number tag to
+        Dim objDice() As Object = {btnRollDie1, btnRollDie2, btnRollDie3, btnRollDie4, btnRollDie5}
+
+
+        'This had to be a pre-test loop array to catch held dice to work properly
+        For IntX = 0 To blnDiceRoll.Length - 1
+            If blnDiceRoll(IntX) = False Then
+                MsgBox("you are keeping " & objDice(IntX).Tag)
+            Else
+                intDice(IntX) = RandomizeDice(IntX)
+                Randomize(Now.Millisecond)
+                delay()
+                objDice(IntX).Tag = intDice(IntX)
+            End If
+
         Next
 
-        MsgBox("Dice rolls are as follows 1-5: " & " " & CStr(intDice(0)) & ", " & CStr(intDice(1)) & ", " & CStr(intDice(2)) & ", " & CStr(intDice(3)) & ", " & CStr(intDice(4)))
+        MsgBox("Dice rolls are as follows 1-5: " & " " & CStr(btnRollDie1.Tag) & ", " & CStr(btnRollDie2.Tag) & ", " & CStr(btnRollDie3.Tag) & ", " & CStr(btnRollDie4.Tag) & ", " & CStr(btnRollDie5.Tag))
 
     End Sub
 
