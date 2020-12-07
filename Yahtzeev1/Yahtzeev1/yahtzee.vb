@@ -2,10 +2,10 @@
     'boolean to determine if the menu is shown or not
     Dim blnMenu As Boolean = False
 
+    '-----------
+    'LOAD EVENT
+    '-----------
     Private Sub yahtzee_Load(sender As Object, e As EventArgs) Handles Me.Load
-
-
-        'Moved the initialization of the scoreboard into on load event
         lstScores.Items.Add("SCORES") '& ControlChars.Tab & ControlChars.Tab & "You" & ControlChars.Tab & "AI")
         lstScores.Items.Add("Ones")
         lstScores.Items.Add("Twos")
@@ -23,9 +23,11 @@
         lstScores.Items.Add("Chance")
         lstScores.Items.Add("YAHTZEE")
         lstScores.Items.Add("TOTAL")
-
     End Sub
 
+    '----------------
+    'BUTTON HANDLERS
+    '----------------
     Private Sub btnMenu_Click(sender As Object, e As EventArgs) Handles btnMenu.Click
         'menu button handler
         If blnMenu = False Then
@@ -48,7 +50,7 @@
             lblKeep.Show()
             lblRoll.Show()
             grpMenu.Hide()
-            'swithc boolean so handler knows that menu is off
+            'switch boolean so handler knows that menu is off
             blnMenu = False
         End If
     End Sub
@@ -121,59 +123,12 @@
             Call DiceFace(objDice(IntX))
         Next
 
-
         'This comment can be removed at a later time, was here for debug testing before images were applied
         MsgBox("Dice rolls are as follows 1-5: " & " " & CStr(btnRollDie1.Tag) & ", " & CStr(btnRollDie2.Tag) & ", " & CStr(btnRollDie3.Tag) & ", " & CStr(btnRollDie4.Tag) & ", " & CStr(btnRollDie5.Tag))
 
     End Sub
 
-    'Subroutine for setting the dice face image to the associated button from the above roll logic
-    'This does not yet account for held dice row of buttons above
-    Private Sub DiceFace(objButton)
-        If objButton.Tag = "1" Then
-            objButton.BackgroundImage = Image.FromFile("..\Images\Die_Roll_1.png")
-            objButton.BackgroundImageLayout = ImageLayout.Stretch
-
-        ElseIf objButton.Tag = "2" Then
-            objButton.BackgroundImage = Image.FromFile("..\Images\Die_Roll_2.png")
-            objButton.BackgroundImageLayout = ImageLayout.Stretch
-
-        ElseIf objButton.Tag = "3" Then
-            objButton.BackgroundImage = Image.FromFile("..\Images\Die_Roll_3.png")
-            objButton.BackgroundImageLayout = ImageLayout.Stretch
-
-        ElseIf objButton.Tag = "4" Then
-            objButton.BackgroundImage = Image.FromFile("..\Images\Die_Roll_4.png")
-            objButton.BackgroundImageLayout = ImageLayout.Stretch
-
-        ElseIf objButton.Tag = "5" Then
-            objButton.BackgroundImage = Image.FromFile("..\Images\Die_Roll_5.png")
-            objButton.BackgroundImageLayout = ImageLayout.Stretch
-
-        ElseIf objButton.Tag = "6" Then
-            objButton.BackgroundImage = Image.FromFile("..\Images\Die_Roll_6.png")
-            objButton.BackgroundImageLayout = ImageLayout.Stretch
-
-        End If
-    End Sub
-
-
-    Function RandomizeDice(intDie) As Integer
-        Dim intDieChoice As Integer
-
-        intDieChoice = CInt(Math.Ceiling(Rnd(0) * 6))
-        Randomize(Now.Millisecond)
-
-        Return intDieChoice
-    End Function
-
-    Sub delay()
-        Dim count As Integer = 1
-        For count = 1 To 10000000
-            count = count + 1
-        Next
-    End Sub
-
+    '10 HANDLERS TO CONTROL KEEP/ROLL STATE OF DICE BUTTONS
     Private Sub btnRollDie1_Click(sender As Object, e As EventArgs) Handles btnRollDie1.Click
         'Button Handler to keep First die
         btnKeepDie1.Visible = True
@@ -232,5 +187,54 @@
         'Button Handler to roll Fifth die
         btnKeepDie5.Visible = False
         btnRollDie5.Visible = True
+    End Sub
+
+    '----------------------
+    'SUBROUTINES/FUNCTIONS
+    '----------------------
+
+    'Subroutine for setting the dice face image to the associated button from the above roll logic
+    'This does not yet account for held dice row of buttons above
+    Private Sub DiceFace(objButton)
+        If objButton.Tag = "1" Then
+            objButton.BackgroundImage = Image.FromFile("..\Images\Die_Roll_1.png")
+            objButton.BackgroundImageLayout = ImageLayout.Stretch
+
+        ElseIf objButton.Tag = "2" Then
+            objButton.BackgroundImage = Image.FromFile("..\Images\Die_Roll_2.png")
+            objButton.BackgroundImageLayout = ImageLayout.Stretch
+
+        ElseIf objButton.Tag = "3" Then
+            objButton.BackgroundImage = Image.FromFile("..\Images\Die_Roll_3.png")
+            objButton.BackgroundImageLayout = ImageLayout.Stretch
+
+        ElseIf objButton.Tag = "4" Then
+            objButton.BackgroundImage = Image.FromFile("..\Images\Die_Roll_4.png")
+            objButton.BackgroundImageLayout = ImageLayout.Stretch
+
+        ElseIf objButton.Tag = "5" Then
+            objButton.BackgroundImage = Image.FromFile("..\Images\Die_Roll_5.png")
+            objButton.BackgroundImageLayout = ImageLayout.Stretch
+
+        ElseIf objButton.Tag = "6" Then
+            objButton.BackgroundImage = Image.FromFile("..\Images\Die_Roll_6.png")
+            objButton.BackgroundImageLayout = ImageLayout.Stretch
+        End If
+    End Sub
+
+    Function RandomizeDice(intDie) As Integer
+        Dim intDieChoice As Integer
+
+        intDieChoice = CInt(Math.Ceiling(Rnd(0) * 6))
+        Randomize(Now.Millisecond)
+
+        Return intDieChoice
+    End Function
+
+    Sub delay()
+        Dim count As Integer = 1
+        For count = 1 To 10000000
+            count = count + 1
+        Next
     End Sub
 End Class
