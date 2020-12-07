@@ -81,25 +81,25 @@
         If btnRollDie2.Visible = True Then
             blnRollDie2 = True
         Else
-            blnRollDie1 = False
+            blnRollDie2 = False
         End If
 
         If btnRollDie3.Visible = True Then
             blnRollDie3 = True
         Else
-            blnRollDie1 = False
+            blnRollDie3 = False
         End If
 
         If btnRollDie4.Visible = True Then
             blnRollDie4 = True
         Else
-            blnRollDie1 = False
+            blnRollDie4 = False
         End If
 
         If btnRollDie5.Visible = True Then
             blnRollDie5 = True
         Else
-            blnRollDie1 = False
+            blnRollDie5 = False
         End If
 
         'Created an array to keep all 5 roll choices after the If statements to properly populate the array
