@@ -51,6 +51,7 @@ Partial Class yahtzee
         Me.btnRollDie1.Name = "btnRollDie1"
         Me.btnRollDie1.Size = New System.Drawing.Size(50, 50)
         Me.btnRollDie1.TabIndex = 0
+        Me.btnRollDie1.TabStop = False
         Me.btnRollDie1.UseVisualStyleBackColor = True
         '
         'btnRollDie2
@@ -59,6 +60,7 @@ Partial Class yahtzee
         Me.btnRollDie2.Name = "btnRollDie2"
         Me.btnRollDie2.Size = New System.Drawing.Size(50, 50)
         Me.btnRollDie2.TabIndex = 1
+        Me.btnRollDie2.TabStop = False
         Me.btnRollDie2.UseVisualStyleBackColor = True
         '
         'btnRollDie4
@@ -67,6 +69,7 @@ Partial Class yahtzee
         Me.btnRollDie4.Name = "btnRollDie4"
         Me.btnRollDie4.Size = New System.Drawing.Size(50, 50)
         Me.btnRollDie4.TabIndex = 3
+        Me.btnRollDie4.TabStop = False
         Me.btnRollDie4.UseVisualStyleBackColor = True
         '
         'btnRollDie3
@@ -75,6 +78,7 @@ Partial Class yahtzee
         Me.btnRollDie3.Name = "btnRollDie3"
         Me.btnRollDie3.Size = New System.Drawing.Size(50, 50)
         Me.btnRollDie3.TabIndex = 2
+        Me.btnRollDie3.TabStop = False
         Me.btnRollDie3.UseVisualStyleBackColor = True
         '
         'btnRollDie5
@@ -83,6 +87,7 @@ Partial Class yahtzee
         Me.btnRollDie5.Name = "btnRollDie5"
         Me.btnRollDie5.Size = New System.Drawing.Size(50, 50)
         Me.btnRollDie5.TabIndex = 4
+        Me.btnRollDie5.TabStop = False
         Me.btnRollDie5.UseVisualStyleBackColor = True
         '
         'grpDice
@@ -110,6 +115,7 @@ Partial Class yahtzee
         Me.btnKeepDie5.Name = "btnKeepDie5"
         Me.btnKeepDie5.Size = New System.Drawing.Size(50, 50)
         Me.btnKeepDie5.TabIndex = 9
+        Me.btnKeepDie5.TabStop = False
         Me.btnKeepDie5.UseVisualStyleBackColor = True
         Me.btnKeepDie5.Visible = False
         '
@@ -119,6 +125,7 @@ Partial Class yahtzee
         Me.btnKeepDie4.Name = "btnKeepDie4"
         Me.btnKeepDie4.Size = New System.Drawing.Size(50, 50)
         Me.btnKeepDie4.TabIndex = 8
+        Me.btnKeepDie4.TabStop = False
         Me.btnKeepDie4.UseVisualStyleBackColor = True
         Me.btnKeepDie4.Visible = False
         '
@@ -128,6 +135,7 @@ Partial Class yahtzee
         Me.btnKeepDie3.Name = "btnKeepDie3"
         Me.btnKeepDie3.Size = New System.Drawing.Size(50, 50)
         Me.btnKeepDie3.TabIndex = 7
+        Me.btnKeepDie3.TabStop = False
         Me.btnKeepDie3.UseVisualStyleBackColor = True
         Me.btnKeepDie3.Visible = False
         '
@@ -137,6 +145,7 @@ Partial Class yahtzee
         Me.btnKeepDie2.Name = "btnKeepDie2"
         Me.btnKeepDie2.Size = New System.Drawing.Size(50, 50)
         Me.btnKeepDie2.TabIndex = 6
+        Me.btnKeepDie2.TabStop = False
         Me.btnKeepDie2.UseVisualStyleBackColor = True
         Me.btnKeepDie2.Visible = False
         '
@@ -146,6 +155,7 @@ Partial Class yahtzee
         Me.btnKeepDie1.Name = "btnKeepDie1"
         Me.btnKeepDie1.Size = New System.Drawing.Size(50, 50)
         Me.btnKeepDie1.TabIndex = 5
+        Me.btnKeepDie1.TabStop = False
         Me.btnKeepDie1.UseVisualStyleBackColor = True
         Me.btnKeepDie1.Visible = False
         '
@@ -226,8 +236,10 @@ Partial Class yahtzee
         '
         'yahtzee
         '
+        Me.AcceptButton = Me.btnRoll
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnMenu
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.lblRoll)
         Me.Controls.Add(Me.lblKeep)
