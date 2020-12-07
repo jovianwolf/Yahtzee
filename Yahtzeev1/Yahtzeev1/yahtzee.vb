@@ -69,6 +69,7 @@
         Dim blnRollDie4 As Boolean
         Dim blnRollDie5 As Boolean
 
+        'This is probably where we should add the cloned die facing to the held dice button row -may remove this comment later if dumb idea...
         If btnRollDie1.Visible = True Then
             blnRollDie1 = True
         Else
@@ -106,7 +107,7 @@
         Dim objDice() As Object = {btnRollDie1, btnRollDie2, btnRollDie3, btnRollDie4, btnRollDie5}
 
 
-        'This had to be a pre-test loop array to catch held dice to work properly
+        'This had to be a pre-test loop array to catch is player was holding on to the dice in order to work correctly
         For IntX = 0 To blnDiceRoll.Length - 1
             If blnDiceRoll(IntX) = False Then
                 MsgBox("you are keeping " & objDice(IntX).Tag)
@@ -121,11 +122,13 @@
         Next
 
 
-
+        'This comment can be removed at a later time, was here for debug testing before images were applied
         MsgBox("Dice rolls are as follows 1-5: " & " " & CStr(btnRollDie1.Tag) & ", " & CStr(btnRollDie2.Tag) & ", " & CStr(btnRollDie3.Tag) & ", " & CStr(btnRollDie4.Tag) & ", " & CStr(btnRollDie5.Tag))
 
     End Sub
 
+    'Subroutine for setting the dice face image to the associated button from the above roll logic
+    'This does not yet account for held dice row of buttons above
     Private Sub DiceFace(objButton)
         If objButton.Tag = "1" Then
             objButton.BackgroundImage = Image.FromFile("..\Images\Die_Roll_1.png")
