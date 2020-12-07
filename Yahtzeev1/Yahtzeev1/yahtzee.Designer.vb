@@ -47,45 +47,50 @@ Partial Class yahtzee
         '
         'btnRollDie1
         '
-        Me.btnRollDie1.Location = New System.Drawing.Point(12, 75)
+        Me.btnRollDie1.Location = New System.Drawing.Point(18, 115)
+        Me.btnRollDie1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnRollDie1.Name = "btnRollDie1"
-        Me.btnRollDie1.Size = New System.Drawing.Size(50, 50)
+        Me.btnRollDie1.Size = New System.Drawing.Size(75, 77)
         Me.btnRollDie1.TabIndex = 0
         Me.btnRollDie1.Text = "(dice visual)"
         Me.btnRollDie1.UseVisualStyleBackColor = True
         '
         'btnRollDie2
         '
-        Me.btnRollDie2.Location = New System.Drawing.Point(68, 75)
+        Me.btnRollDie2.Location = New System.Drawing.Point(102, 115)
+        Me.btnRollDie2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnRollDie2.Name = "btnRollDie2"
-        Me.btnRollDie2.Size = New System.Drawing.Size(50, 50)
+        Me.btnRollDie2.Size = New System.Drawing.Size(75, 77)
         Me.btnRollDie2.TabIndex = 1
         Me.btnRollDie2.Text = "(dice visual)"
         Me.btnRollDie2.UseVisualStyleBackColor = True
         '
         'btnRollDie4
         '
-        Me.btnRollDie4.Location = New System.Drawing.Point(180, 75)
+        Me.btnRollDie4.Location = New System.Drawing.Point(270, 115)
+        Me.btnRollDie4.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnRollDie4.Name = "btnRollDie4"
-        Me.btnRollDie4.Size = New System.Drawing.Size(50, 50)
+        Me.btnRollDie4.Size = New System.Drawing.Size(75, 77)
         Me.btnRollDie4.TabIndex = 3
         Me.btnRollDie4.Text = "(dice visual)"
         Me.btnRollDie4.UseVisualStyleBackColor = True
         '
         'btnRollDie3
         '
-        Me.btnRollDie3.Location = New System.Drawing.Point(124, 75)
+        Me.btnRollDie3.Location = New System.Drawing.Point(186, 115)
+        Me.btnRollDie3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnRollDie3.Name = "btnRollDie3"
-        Me.btnRollDie3.Size = New System.Drawing.Size(50, 50)
+        Me.btnRollDie3.Size = New System.Drawing.Size(75, 77)
         Me.btnRollDie3.TabIndex = 2
         Me.btnRollDie3.Text = "(dice visual)"
         Me.btnRollDie3.UseVisualStyleBackColor = True
         '
         'btnRollDie5
         '
-        Me.btnRollDie5.Location = New System.Drawing.Point(236, 75)
+        Me.btnRollDie5.Location = New System.Drawing.Point(354, 115)
+        Me.btnRollDie5.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnRollDie5.Name = "btnRollDie5"
-        Me.btnRollDie5.Size = New System.Drawing.Size(50, 50)
+        Me.btnRollDie5.Size = New System.Drawing.Size(75, 77)
         Me.btnRollDie5.TabIndex = 4
         Me.btnRollDie5.Text = "(dice visual)"
         Me.btnRollDie5.UseVisualStyleBackColor = True
@@ -102,18 +107,21 @@ Partial Class yahtzee
         Me.grpDice.Controls.Add(Me.btnRollDie3)
         Me.grpDice.Controls.Add(Me.btnRollDie2)
         Me.grpDice.Controls.Add(Me.btnRollDie1)
-        Me.grpDice.Location = New System.Drawing.Point(230, 150)
+        Me.grpDice.Location = New System.Drawing.Point(345, 231)
+        Me.grpDice.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.grpDice.Name = "grpDice"
-        Me.grpDice.Size = New System.Drawing.Size(300, 150)
+        Me.grpDice.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.grpDice.Size = New System.Drawing.Size(450, 231)
         Me.grpDice.TabIndex = 5
         Me.grpDice.TabStop = False
         Me.grpDice.Text = "Dice"
         '
         'btnKeepDie5
         '
-        Me.btnKeepDie5.Location = New System.Drawing.Point(236, 19)
+        Me.btnKeepDie5.Location = New System.Drawing.Point(354, 29)
+        Me.btnKeepDie5.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnKeepDie5.Name = "btnKeepDie5"
-        Me.btnKeepDie5.Size = New System.Drawing.Size(50, 50)
+        Me.btnKeepDie5.Size = New System.Drawing.Size(75, 77)
         Me.btnKeepDie5.TabIndex = 9
         Me.btnKeepDie5.Text = "(dice visual)"
         Me.btnKeepDie5.UseVisualStyleBackColor = True
@@ -121,9 +129,10 @@ Partial Class yahtzee
         '
         'btnKeepDie4
         '
-        Me.btnKeepDie4.Location = New System.Drawing.Point(180, 19)
+        Me.btnKeepDie4.Location = New System.Drawing.Point(270, 29)
+        Me.btnKeepDie4.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnKeepDie4.Name = "btnKeepDie4"
-        Me.btnKeepDie4.Size = New System.Drawing.Size(50, 50)
+        Me.btnKeepDie4.Size = New System.Drawing.Size(75, 77)
         Me.btnKeepDie4.TabIndex = 8
         Me.btnKeepDie4.Text = "(dice visual)"
         Me.btnKeepDie4.UseVisualStyleBackColor = True
@@ -131,9 +140,10 @@ Partial Class yahtzee
         '
         'btnKeepDie3
         '
-        Me.btnKeepDie3.Location = New System.Drawing.Point(124, 19)
+        Me.btnKeepDie3.Location = New System.Drawing.Point(186, 29)
+        Me.btnKeepDie3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnKeepDie3.Name = "btnKeepDie3"
-        Me.btnKeepDie3.Size = New System.Drawing.Size(50, 50)
+        Me.btnKeepDie3.Size = New System.Drawing.Size(75, 77)
         Me.btnKeepDie3.TabIndex = 7
         Me.btnKeepDie3.Text = "(dice visual)"
         Me.btnKeepDie3.UseVisualStyleBackColor = True
@@ -141,9 +151,10 @@ Partial Class yahtzee
         '
         'btnKeepDie2
         '
-        Me.btnKeepDie2.Location = New System.Drawing.Point(68, 19)
+        Me.btnKeepDie2.Location = New System.Drawing.Point(102, 29)
+        Me.btnKeepDie2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnKeepDie2.Name = "btnKeepDie2"
-        Me.btnKeepDie2.Size = New System.Drawing.Size(50, 50)
+        Me.btnKeepDie2.Size = New System.Drawing.Size(75, 77)
         Me.btnKeepDie2.TabIndex = 6
         Me.btnKeepDie2.Text = "(dice visual)"
         Me.btnKeepDie2.UseVisualStyleBackColor = True
@@ -151,9 +162,10 @@ Partial Class yahtzee
         '
         'btnKeepDie1
         '
-        Me.btnKeepDie1.Location = New System.Drawing.Point(12, 19)
+        Me.btnKeepDie1.Location = New System.Drawing.Point(18, 29)
+        Me.btnKeepDie1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnKeepDie1.Name = "btnKeepDie1"
-        Me.btnKeepDie1.Size = New System.Drawing.Size(50, 50)
+        Me.btnKeepDie1.Size = New System.Drawing.Size(75, 77)
         Me.btnKeepDie1.TabIndex = 5
         Me.btnKeepDie1.Text = "(dice visual)"
         Me.btnKeepDie1.UseVisualStyleBackColor = True
@@ -162,26 +174,30 @@ Partial Class yahtzee
         'lstScores
         '
         Me.lstScores.FormattingEnabled = True
-        Me.lstScores.Location = New System.Drawing.Point(34, 58)
+        Me.lstScores.ItemHeight = 20
+        Me.lstScores.Location = New System.Drawing.Point(51, 89)
+        Me.lstScores.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.lstScores.MultiColumn = True
         Me.lstScores.Name = "lstScores"
-        Me.lstScores.Size = New System.Drawing.Size(173, 303)
+        Me.lstScores.Size = New System.Drawing.Size(258, 464)
         Me.lstScores.TabIndex = 11
         '
         'btnRoll
         '
-        Me.btnRoll.Location = New System.Drawing.Point(455, 121)
+        Me.btnRoll.Location = New System.Drawing.Point(682, 186)
+        Me.btnRoll.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnRoll.Name = "btnRoll"
-        Me.btnRoll.Size = New System.Drawing.Size(75, 23)
+        Me.btnRoll.Size = New System.Drawing.Size(112, 35)
         Me.btnRoll.TabIndex = 12
         Me.btnRoll.Text = "Roll!"
         Me.btnRoll.UseVisualStyleBackColor = True
         '
         'btnMenu
         '
-        Me.btnMenu.Location = New System.Drawing.Point(230, 121)
+        Me.btnMenu.Location = New System.Drawing.Point(345, 186)
+        Me.btnMenu.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnMenu.Name = "btnMenu"
-        Me.btnMenu.Size = New System.Drawing.Size(75, 23)
+        Me.btnMenu.Size = New System.Drawing.Size(112, 35)
         Me.btnMenu.TabIndex = 13
         Me.btnMenu.Text = "Menu"
         Me.btnMenu.UseVisualStyleBackColor = True
@@ -190,9 +206,11 @@ Partial Class yahtzee
         '
         Me.grpMenu.Controls.Add(Me.btnReset)
         Me.grpMenu.Controls.Add(Me.btnExit)
-        Me.grpMenu.Location = New System.Drawing.Point(260, 300)
+        Me.grpMenu.Location = New System.Drawing.Point(390, 462)
+        Me.grpMenu.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.grpMenu.Name = "grpMenu"
-        Me.grpMenu.Size = New System.Drawing.Size(88, 150)
+        Me.grpMenu.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.grpMenu.Size = New System.Drawing.Size(132, 231)
         Me.grpMenu.TabIndex = 14
         Me.grpMenu.TabStop = False
         Me.grpMenu.Text = "Menu"
@@ -200,18 +218,20 @@ Partial Class yahtzee
         '
         'btnReset
         '
-        Me.btnReset.Location = New System.Drawing.Point(6, 48)
+        Me.btnReset.Location = New System.Drawing.Point(9, 74)
+        Me.btnReset.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnReset.Name = "btnReset"
-        Me.btnReset.Size = New System.Drawing.Size(75, 23)
+        Me.btnReset.Size = New System.Drawing.Size(112, 35)
         Me.btnReset.TabIndex = 1
         Me.btnReset.Text = "Reset Game"
         Me.btnReset.UseVisualStyleBackColor = True
         '
         'btnExit
         '
-        Me.btnExit.Location = New System.Drawing.Point(6, 19)
+        Me.btnExit.Location = New System.Drawing.Point(9, 29)
+        Me.btnExit.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnExit.Name = "btnExit"
-        Me.btnExit.Size = New System.Drawing.Size(75, 23)
+        Me.btnExit.Size = New System.Drawing.Size(112, 35)
         Me.btnExit.TabIndex = 0
         Me.btnExit.Text = "Exit"
         Me.btnExit.UseVisualStyleBackColor = True
@@ -219,26 +239,28 @@ Partial Class yahtzee
         'lblKeep
         '
         Me.lblKeep.AutoSize = True
-        Me.lblKeep.Location = New System.Drawing.Point(537, 169)
+        Me.lblKeep.Location = New System.Drawing.Point(806, 260)
+        Me.lblKeep.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblKeep.Name = "lblKeep"
-        Me.lblKeep.Size = New System.Drawing.Size(154, 13)
+        Me.lblKeep.Size = New System.Drawing.Size(226, 20)
         Me.lblKeep.TabIndex = 15
         Me.lblKeep.Text = "These dice are kept for scoring"
         '
         'lblRoll
         '
         Me.lblRoll.AutoSize = True
-        Me.lblRoll.Location = New System.Drawing.Point(537, 225)
+        Me.lblRoll.Location = New System.Drawing.Point(806, 346)
+        Me.lblRoll.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblRoll.Name = "lblRoll"
-        Me.lblRoll.Size = New System.Drawing.Size(93, 13)
+        Me.lblRoll.Size = New System.Drawing.Size(134, 20)
         Me.lblRoll.TabIndex = 16
         Me.lblRoll.Text = "These dice will roll"
         '
         'yahtzee
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(1200, 692)
         Me.Controls.Add(Me.lblRoll)
         Me.Controls.Add(Me.lblKeep)
         Me.Controls.Add(Me.grpMenu)
@@ -246,6 +268,7 @@ Partial Class yahtzee
         Me.Controls.Add(Me.btnRoll)
         Me.Controls.Add(Me.lstScores)
         Me.Controls.Add(Me.grpDice)
+        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "yahtzee"
         Me.Text = "Yahtzee"
         Me.grpDice.ResumeLayout(False)

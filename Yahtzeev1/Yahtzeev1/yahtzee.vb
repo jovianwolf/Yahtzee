@@ -116,12 +116,44 @@
                 delay()
                 objDice(IntX).Tag = intDice(IntX)
             End If
-
+            'Call subroutine to set the dice button face
+            Call DiceFace(objDice(IntX))
         Next
+
+
 
         MsgBox("Dice rolls are as follows 1-5: " & " " & CStr(btnRollDie1.Tag) & ", " & CStr(btnRollDie2.Tag) & ", " & CStr(btnRollDie3.Tag) & ", " & CStr(btnRollDie4.Tag) & ", " & CStr(btnRollDie5.Tag))
 
     End Sub
+
+    Private Sub DiceFace(objButton)
+        If objButton.Tag = "1" Then
+            objButton.BackgroundImage = Image.FromFile("..\Images\Die_Roll_1.png")
+            objButton.BackgroundImageLayout = ImageLayout.Stretch
+
+        ElseIf objButton.Tag = "2" Then
+            objButton.BackgroundImage = Image.FromFile("..\Images\Die_Roll_2.png")
+            objButton.BackgroundImageLayout = ImageLayout.Stretch
+
+        ElseIf objButton.Tag = "3" Then
+            objButton.BackgroundImage = Image.FromFile("..\Images\Die_Roll_3.png")
+            objButton.BackgroundImageLayout = ImageLayout.Stretch
+
+        ElseIf objButton.Tag = "4" Then
+            objButton.BackgroundImage = Image.FromFile("..\Images\Die_Roll_4.png")
+            objButton.BackgroundImageLayout = ImageLayout.Stretch
+
+        ElseIf objButton.Tag = "5" Then
+            objButton.BackgroundImage = Image.FromFile("..\Images\Die_Roll_5.png")
+            objButton.BackgroundImageLayout = ImageLayout.Stretch
+
+        ElseIf objButton.Tag = "6" Then
+            objButton.BackgroundImage = Image.FromFile("..\Images\Die_Roll_6.png")
+            objButton.BackgroundImageLayout = ImageLayout.Stretch
+
+        End If
+    End Sub
+
 
     Function RandomizeDice(intDie) As Integer
         Dim intDieChoice As Integer
