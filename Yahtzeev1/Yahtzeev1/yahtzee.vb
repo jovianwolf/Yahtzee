@@ -131,30 +131,46 @@
     '10 HANDLERS TO CONTROL KEEP/ROLL STATE OF DICE BUTTONS
     Private Sub btnRollDie1_Click(sender As Object, e As EventArgs) Handles btnRollDie1.Click
         'Button Handler to keep First die
+        'clones the tag from the roll on to the keep button and sets the die face
+        btnKeepDie1.Tag = btnRollDie1.Tag
+        Call DiceFace(btnKeepDie1)
+
         btnKeepDie1.Visible = True
         btnRollDie1.Visible = False
     End Sub
 
     Private Sub btnRollDie2_Click(sender As Object, e As EventArgs) Handles btnRollDie2.Click
         'Button Handler to keep Second die
+        btnKeepDie2.Tag = btnRollDie2.Tag
+        Call DiceFace(btnKeepDie2)
+
         btnKeepDie2.Visible = True
         btnRollDie2.Visible = False
     End Sub
 
     Private Sub btnRollDie3_Click(sender As Object, e As EventArgs) Handles btnRollDie3.Click
         'Button Handler to keep Third die
+        btnKeepDie3.Tag = btnRollDie3.Tag
+        Call DiceFace(btnKeepDie3)
+
         btnKeepDie3.Visible = True
         btnRollDie3.Visible = False
     End Sub
 
     Private Sub btnRollDie4_Click(sender As Object, e As EventArgs) Handles btnRollDie4.Click
         'Button Handler to keep Fourth die
+        btnKeepDie4.Tag = btnRollDie4.Tag
+        Call DiceFace(btnKeepDie4)
+
         btnKeepDie4.Visible = True
         btnRollDie4.Visible = False
     End Sub
 
     Private Sub btnRollDie5_Click(sender As Object, e As EventArgs) Handles btnRollDie5.Click
         'Button Handler to keep Fifth die
+        btnKeepDie5.Tag = btnRollDie5.Tag
+        Call DiceFace(btnKeepDie5)
+
         btnKeepDie5.Visible = True
         btnRollDie5.Visible = False
     End Sub
