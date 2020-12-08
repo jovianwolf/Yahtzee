@@ -394,14 +394,31 @@
         Next
     End Sub
 
+    'Subroutine called when Yahtzee is marked and needs to validate for scoring
     Private Sub ScoreYahtzee(intDiceArray)
-        'This is busted for now because below doesn't work for comparing all
-        'objects in the array as the same (for some reason?)
-        If intDiceArray(0) = intDiceArray(1) = intDiceArray(2) = intDiceArray(3) = intDiceArray(4) Then
+        'boolean used in test loop to validate if all die are the same
+        Dim blnValidYahtzee As Boolean
+
+        'this steps through the array and compares each value to the first value
+        For intX = 0 To intDiceArray.Length - 1
+
+            If intDiceArray(intX) <> intDiceArray(0) Then
+                blnValidYahtzee = False
+
+            Else
+                blnValidYahtzee = True
+
+            End If
+
+        Next
+
+        'sets the score for yahtzee index to 50 or 0 if the play is correct
+        If blnValidYahtzee = True Then
             lstScores.Items(15) = "YAHTZEE" & ControlChars.Tab & "50"
         Else
             lstScores.Items(15) = "YAHTZEE" & ControlChars.Tab & "0"
         End If
+
         'Setting the radio button to invisible so player can only play 1x
         rdbYahtzee.Visible = False
     End Sub
