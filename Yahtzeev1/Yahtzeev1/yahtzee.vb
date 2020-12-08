@@ -86,10 +86,90 @@
         Me.Close()
     End Sub
 
+    'Debug Roll handler to feed values into the dice for testing
+    Private Sub btnDebugRoll_Click(sender As Object, e As EventArgs) Handles btnDebugRoll.Click
+        Dim strInputError As String = "Dice must be a number 1-6"
+
+        'Checks if debug mode is enabled and shows the player input boxes if so
+        If cbxDebug.Checked = True Then
+            txtDie1.Visible = True
+            If IsNumeric(txtDie1.Text) Then
+                If CInt(txtDie1.Text) > 0 And CInt(txtDie1.Text) < 7 Then
+                    btnRollDie1.Tag = txtDie1.Text
+                    btnKeepDie1.Tag = txtDie1.Text
+                    Call DiceFace(btnKeepDie1)
+                Else
+                    MsgBox("Dice 1: " & strInputError)
+                End If
+            Else
+                MsgBox("Dice 1: " & strInputError)
+            End If
+
+            txtDie2.Visible = True
+            If IsNumeric(txtDie2.Text) Then
+                If CInt(txtDie2.Text) > 0 And CInt(txtDie2.Text) < 7 Then
+                    btnRollDie2.Tag = txtDie2.Text
+                    btnKeepDie2.Tag = txtDie2.Text
+                    Call DiceFace(btnKeepDie2)
+                Else
+                    MsgBox("Dice 2: " & strInputError)
+                End If
+            Else
+                MsgBox("Dice 2: " & strInputError)
+            End If
+
+            txtDie3.Visible = True
+            If IsNumeric(txtDie3.Text) Then
+                If CInt(txtDie3.Text) > 0 And CInt(txtDie3.Text) < 7 Then
+                    btnRollDie3.Tag = txtDie3.Text
+                    btnKeepDie3.Tag = txtDie3.Text
+                    Call DiceFace(btnKeepDie3)
+                Else
+                    MsgBox("Dice 3: " & strInputError)
+                End If
+            Else
+                MsgBox("Dice 3: " & strInputError)
+            End If
+
+            txtDie4.Visible = True
+            If IsNumeric(txtDie4.Text) Then
+                If CInt(txtDie4.Text) > 0 And CInt(txtDie4.Text) < 7 Then
+                    btnRollDie4.Tag = txtDie4.Text
+                    btnKeepDie4.Tag = txtDie4.Text
+                    Call DiceFace(btnKeepDie4)
+                Else
+                    MsgBox("Dice 4: " & strInputError)
+                End If
+            Else
+                MsgBox("Dice 4: " & strInputError)
+            End If
+
+            txtDie5.Visible = True
+            If IsNumeric(txtDie5.Text) Then
+                If CInt(txtDie5.Text) > 0 And CInt(txtDie5.Text) < 7 Then
+                    btnRollDie5.Tag = txtDie5.Text
+                    btnKeepDie5.Tag = txtDie5.Text
+                    Call DiceFace(btnKeepDie5)
+                Else
+                    MsgBox("Dice 5: " & strInputError)
+                End If
+            Else
+                MsgBox("Dice 5: " & strInputError)
+            End If
+
+        End If
+    End Sub
+
     Private Sub btnRoll_Click(sender As Object, e As EventArgs) Handles btnRoll.Click
         'Will need to change this to be an array that can dynamically change depending on the visibility of the buttons
         'Example, if user is only re-rolling 2 dice, we shouldn't roll 6 randoms
         Dim intDice(6) As Integer
+
+        If cbxDebug.Checked = True Then
+            btnDebugRoll.Visible = True
+        Else
+            btnDebugRoll.Visible = False
+        End If
 
         'This is probably where we should add the cloned die facing to the held dice button row -may remove this comment later if dumb idea...
         If btnRollDie1.Visible = True Then
@@ -170,8 +250,8 @@
     End Sub
 
     '10 HANDLERS TO CONTROL KEEP/ROLL STATE OF DICE BUTTONS
+    'Button Handler to keep First die
     Private Sub btnRollDie1_Click(sender As Object, e As EventArgs) Handles btnRollDie1.Click
-        'Button Handler to keep First die
         'clones the tag from the roll on to the keep button and sets the die face
         If intRollNum <> 0 Then
             btnKeepDie1.Tag = btnRollDie1.Tag
@@ -309,4 +389,6 @@
         'Setting the radio button to invisible so player can only play 1x
         rdbYahtzee.Visible = False
     End Sub
+
+
 End Class

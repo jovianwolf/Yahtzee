@@ -28,6 +28,11 @@ Partial Class yahtzee
         Me.btnRollDie3 = New System.Windows.Forms.Button()
         Me.btnRollDie5 = New System.Windows.Forms.Button()
         Me.grpDice = New System.Windows.Forms.GroupBox()
+        Me.txtDie5 = New System.Windows.Forms.TextBox()
+        Me.txtDie4 = New System.Windows.Forms.TextBox()
+        Me.txtDie3 = New System.Windows.Forms.TextBox()
+        Me.txtDie2 = New System.Windows.Forms.TextBox()
+        Me.txtDie1 = New System.Windows.Forms.TextBox()
         Me.btnKeepDie5 = New System.Windows.Forms.Button()
         Me.btnKeepDie4 = New System.Windows.Forms.Button()
         Me.btnKeepDie3 = New System.Windows.Forms.Button()
@@ -37,6 +42,7 @@ Partial Class yahtzee
         Me.btnRoll = New System.Windows.Forms.Button()
         Me.btnMenu = New System.Windows.Forms.Button()
         Me.grpMenu = New System.Windows.Forms.GroupBox()
+        Me.cbxDebug = New System.Windows.Forms.CheckBox()
         Me.btnReset = New System.Windows.Forms.Button()
         Me.btnExit = New System.Windows.Forms.Button()
         Me.lblKeep = New System.Windows.Forms.Label()
@@ -57,12 +63,7 @@ Partial Class yahtzee
         Me.rdbTwos = New System.Windows.Forms.RadioButton()
         Me.rdbOnes = New System.Windows.Forms.RadioButton()
         Me.btnMarkScore = New System.Windows.Forms.Button()
-        Me.cbxDebug = New System.Windows.Forms.CheckBox()
-        Me.txtDie1 = New System.Windows.Forms.TextBox()
-        Me.txtDie2 = New System.Windows.Forms.TextBox()
-        Me.txtDie3 = New System.Windows.Forms.TextBox()
-        Me.txtDie4 = New System.Windows.Forms.TextBox()
-        Me.txtDie5 = New System.Windows.Forms.TextBox()
+        Me.btnDebugRoll = New System.Windows.Forms.Button()
         Me.grpDice.SuspendLayout()
         Me.grpMenu.SuspendLayout()
         Me.GbxScore.SuspendLayout()
@@ -143,6 +144,51 @@ Partial Class yahtzee
         Me.grpDice.TabIndex = 5
         Me.grpDice.TabStop = False
         Me.grpDice.Text = "Dice"
+        '
+        'txtDie5
+        '
+        Me.txtDie5.Location = New System.Drawing.Point(354, 200)
+        Me.txtDie5.Name = "txtDie5"
+        Me.txtDie5.Size = New System.Drawing.Size(46, 26)
+        Me.txtDie5.TabIndex = 14
+        Me.txtDie5.Text = "1"
+        Me.txtDie5.Visible = False
+        '
+        'txtDie4
+        '
+        Me.txtDie4.Location = New System.Drawing.Point(270, 197)
+        Me.txtDie4.Name = "txtDie4"
+        Me.txtDie4.Size = New System.Drawing.Size(46, 26)
+        Me.txtDie4.TabIndex = 13
+        Me.txtDie4.Text = "1"
+        Me.txtDie4.Visible = False
+        '
+        'txtDie3
+        '
+        Me.txtDie3.Location = New System.Drawing.Point(186, 197)
+        Me.txtDie3.Name = "txtDie3"
+        Me.txtDie3.Size = New System.Drawing.Size(46, 26)
+        Me.txtDie3.TabIndex = 12
+        Me.txtDie3.Text = "1"
+        Me.txtDie3.Visible = False
+        '
+        'txtDie2
+        '
+        Me.txtDie2.Location = New System.Drawing.Point(102, 197)
+        Me.txtDie2.Name = "txtDie2"
+        Me.txtDie2.Size = New System.Drawing.Size(46, 26)
+        Me.txtDie2.TabIndex = 11
+        Me.txtDie2.Text = "1"
+        Me.txtDie2.Visible = False
+        '
+        'txtDie1
+        '
+        Me.txtDie1.Location = New System.Drawing.Point(18, 197)
+        Me.txtDie1.Name = "txtDie1"
+        Me.txtDie1.Size = New System.Drawing.Size(46, 26)
+        Me.txtDie1.TabIndex = 10
+        Me.txtDie1.Text = "1"
+        Me.txtDie1.Visible = False
         '
         'btnKeepDie5
         '
@@ -245,6 +291,17 @@ Partial Class yahtzee
         Me.grpMenu.TabStop = False
         Me.grpMenu.Text = "Menu"
         Me.grpMenu.Visible = False
+        '
+        'cbxDebug
+        '
+        Me.cbxDebug.AutoSize = True
+        Me.cbxDebug.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbxDebug.Location = New System.Drawing.Point(0, 182)
+        Me.cbxDebug.Name = "cbxDebug"
+        Me.cbxDebug.Size = New System.Drawing.Size(80, 24)
+        Me.cbxDebug.TabIndex = 2
+        Me.cbxDebug.Text = "debug"
+        Me.cbxDebug.UseVisualStyleBackColor = True
         '
         'btnReset
         '
@@ -474,60 +531,15 @@ Partial Class yahtzee
         Me.btnMarkScore.Text = "Mark Score"
         Me.btnMarkScore.UseVisualStyleBackColor = True
         '
-        'cbxDebug
+        'btnDebugRoll
         '
-        Me.cbxDebug.AutoSize = True
-        Me.cbxDebug.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbxDebug.Location = New System.Drawing.Point(0, 182)
-        Me.cbxDebug.Name = "cbxDebug"
-        Me.cbxDebug.Size = New System.Drawing.Size(80, 24)
-        Me.cbxDebug.TabIndex = 2
-        Me.cbxDebug.Text = "debug"
-        Me.cbxDebug.UseVisualStyleBackColor = True
-        '
-        'txtDie1
-        '
-        Me.txtDie1.Location = New System.Drawing.Point(18, 197)
-        Me.txtDie1.Name = "txtDie1"
-        Me.txtDie1.Size = New System.Drawing.Size(46, 26)
-        Me.txtDie1.TabIndex = 10
-        Me.txtDie1.Text = "1"
-        Me.txtDie1.Visible = False
-        '
-        'txtDie2
-        '
-        Me.txtDie2.Location = New System.Drawing.Point(102, 197)
-        Me.txtDie2.Name = "txtDie2"
-        Me.txtDie2.Size = New System.Drawing.Size(46, 26)
-        Me.txtDie2.TabIndex = 11
-        Me.txtDie2.Text = "1"
-        Me.txtDie2.Visible = False
-        '
-        'txtDie3
-        '
-        Me.txtDie3.Location = New System.Drawing.Point(186, 197)
-        Me.txtDie3.Name = "txtDie3"
-        Me.txtDie3.Size = New System.Drawing.Size(46, 26)
-        Me.txtDie3.TabIndex = 12
-        Me.txtDie3.Text = "1"
-        Me.txtDie3.Visible = False
-        '
-        'txtDie4
-        '
-        Me.txtDie4.Location = New System.Drawing.Point(270, 197)
-        Me.txtDie4.Name = "txtDie4"
-        Me.txtDie4.Size = New System.Drawing.Size(46, 26)
-        Me.txtDie4.TabIndex = 13
-        Me.txtDie4.Text = "1"
-        '
-        'txtDie5
-        '
-        Me.txtDie5.Location = New System.Drawing.Point(354, 200)
-        Me.txtDie5.Name = "txtDie5"
-        Me.txtDie5.Size = New System.Drawing.Size(46, 26)
-        Me.txtDie5.TabIndex = 14
-        Me.txtDie5.Text = "1"
-        Me.txtDie5.Visible = False
+        Me.btnDebugRoll.Location = New System.Drawing.Point(699, 474)
+        Me.btnDebugRoll.Name = "btnDebugRoll"
+        Me.btnDebugRoll.Size = New System.Drawing.Size(95, 42)
+        Me.btnDebugRoll.TabIndex = 19
+        Me.btnDebugRoll.Text = "DebugRoll"
+        Me.btnDebugRoll.UseVisualStyleBackColor = True
+        Me.btnDebugRoll.Visible = False
         '
         'yahtzee
         '
@@ -536,6 +548,7 @@ Partial Class yahtzee
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnMenu
         Me.ClientSize = New System.Drawing.Size(1200, 692)
+        Me.Controls.Add(Me.btnDebugRoll)
         Me.Controls.Add(Me.GbxScore)
         Me.Controls.Add(Me.btnScore)
         Me.Controls.Add(Me.lblRoll)
@@ -600,4 +613,5 @@ Partial Class yahtzee
     Friend WithEvents txtDie3 As TextBox
     Friend WithEvents txtDie2 As TextBox
     Friend WithEvents txtDie1 As TextBox
+    Friend WithEvents btnDebugRoll As Button
 End Class
