@@ -89,6 +89,7 @@
             txtDie3.Visible = True
             txtDie4.Visible = True
             txtDie5.Visible = True
+            grpDice.Size = New Size(300, 160)
         Else
             btnDebugRoll.Visible = False
             txtDie1.Visible = False
@@ -96,6 +97,7 @@
             txtDie3.Visible = False
             txtDie4.Visible = False
             txtDie5.Visible = False
+            grpDice.Size = New Size(300, 135)
         End If
 
 
