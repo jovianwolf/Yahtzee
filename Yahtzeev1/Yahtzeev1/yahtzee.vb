@@ -36,8 +36,9 @@
     '----------------
     'BUTTON HANDLERS
     '----------------
+    'Button handler to show the score box early if player wishes to score before 3x rolls
     Private Sub btnScore_Click(sender As Object, e As EventArgs) Handles btnScore.Click
-        'code to make the score groupbox visible if user wants to score before 3x rolls
+        GbxScore.Visible = True
     End Sub
 
     'Button handler for submitting the player selected score option for scoring
@@ -48,9 +49,10 @@
 
         'The First coded score is Yahtzee, need to add more in this If Statement as ElseIfs
         'And follow similar convention with unique subroutines (for concise-ness?)
-        If rdbYahtzee.Checked Then
+        If rdbYahtzee.Checked And rdbYahtzee.Visible = True Then
             Call ScoreYahtzee(DiceToScore)
         End If
+        GbxScore.Visible = False
     End Sub
 
     Private Sub btnMenu_Click(sender As Object, e As EventArgs) Handles btnMenu.Click
@@ -300,9 +302,9 @@
 
     Private Sub ScoreYahtzee(intDiceArray)
         If intDiceArray(0) = intDiceArray(1) = intDiceArray(2) = intDiceArray(3) = intDiceArray(4) Then
-            lstScores.Items(14) = "YAHTZEE" & ControlChars.Tab & "50"
+            lstScores.Items(15) = "YAHTZEE" & ControlChars.Tab & "50"
         Else
-            lstScores.Items(14) = "YAHTZEE" & ControlChars.Tab & "50"
+            lstScores.Items(15) = "YAHTZEE" & ControlChars.Tab & "50"
         End If
         'Setting the radio button to invisible so player can only play 1x
         rdbYahtzee.Visible = False
