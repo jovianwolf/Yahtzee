@@ -181,11 +181,10 @@
     Private Sub btnRollDie4_Click(sender As Object, e As EventArgs) Handles btnRollDie4.Click
         'Button Handler to keep Fourth die
         If intRollNum <> 0 Then
-            btnKeepDie5.Tag = btnRollDie5.Tag
-            Call DiceFace(btnKeepDie5)
-
-            btnKeepDie5.Visible = True
-            btnRollDie5.Visible = False
+            btnKeepDie4.Tag = btnRollDie5.Tag
+            Call DiceFace(btnKeepDie4)
+            btnKeepDie4.Visible = True
+            btnRollDie4.Visible = False
         End If
     End Sub
 
@@ -194,7 +193,6 @@
             'Button Handler to keep Fifth die
             btnKeepDie5.Tag = btnRollDie5.Tag
             Call DiceFace(btnKeepDie5)
-
             btnKeepDie5.Visible = True
             btnRollDie5.Visible = False
         End If
