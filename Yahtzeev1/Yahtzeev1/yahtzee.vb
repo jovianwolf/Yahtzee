@@ -265,7 +265,7 @@
         End If
     End Sub
 
-    Function RandomizeDice(intDie) As Integer
+    Private Function RandomizeDice(intDie) As Integer
         Dim intDieChoice As Integer
 
         intDieChoice = CInt(Math.Ceiling(Rnd(0) * 6))
@@ -274,7 +274,7 @@
         Return intDieChoice
     End Function
 
-    Sub delay()
+    Private Sub delay()
         Dim count As Integer = 1
         For count = 1 To 10000000
             count = count + 1
