@@ -57,6 +57,12 @@ Partial Class yahtzee
         Me.rdbTwos = New System.Windows.Forms.RadioButton()
         Me.rdbOnes = New System.Windows.Forms.RadioButton()
         Me.btnMarkScore = New System.Windows.Forms.Button()
+        Me.cbxDebug = New System.Windows.Forms.CheckBox()
+        Me.txtDie1 = New System.Windows.Forms.TextBox()
+        Me.txtDie2 = New System.Windows.Forms.TextBox()
+        Me.txtDie3 = New System.Windows.Forms.TextBox()
+        Me.txtDie4 = New System.Windows.Forms.TextBox()
+        Me.txtDie5 = New System.Windows.Forms.TextBox()
         Me.grpDice.SuspendLayout()
         Me.grpMenu.SuspendLayout()
         Me.GbxScore.SuspendLayout()
@@ -114,6 +120,11 @@ Partial Class yahtzee
         '
         'grpDice
         '
+        Me.grpDice.Controls.Add(Me.txtDie5)
+        Me.grpDice.Controls.Add(Me.txtDie4)
+        Me.grpDice.Controls.Add(Me.txtDie3)
+        Me.grpDice.Controls.Add(Me.txtDie2)
+        Me.grpDice.Controls.Add(Me.txtDie1)
         Me.grpDice.Controls.Add(Me.btnKeepDie5)
         Me.grpDice.Controls.Add(Me.btnKeepDie4)
         Me.grpDice.Controls.Add(Me.btnKeepDie3)
@@ -222,6 +233,7 @@ Partial Class yahtzee
         '
         'grpMenu
         '
+        Me.grpMenu.Controls.Add(Me.cbxDebug)
         Me.grpMenu.Controls.Add(Me.btnReset)
         Me.grpMenu.Controls.Add(Me.btnExit)
         Me.grpMenu.Location = New System.Drawing.Point(390, 462)
@@ -462,6 +474,61 @@ Partial Class yahtzee
         Me.btnMarkScore.Text = "Mark Score"
         Me.btnMarkScore.UseVisualStyleBackColor = True
         '
+        'cbxDebug
+        '
+        Me.cbxDebug.AutoSize = True
+        Me.cbxDebug.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbxDebug.Location = New System.Drawing.Point(0, 182)
+        Me.cbxDebug.Name = "cbxDebug"
+        Me.cbxDebug.Size = New System.Drawing.Size(80, 24)
+        Me.cbxDebug.TabIndex = 2
+        Me.cbxDebug.Text = "debug"
+        Me.cbxDebug.UseVisualStyleBackColor = True
+        '
+        'txtDie1
+        '
+        Me.txtDie1.Location = New System.Drawing.Point(18, 197)
+        Me.txtDie1.Name = "txtDie1"
+        Me.txtDie1.Size = New System.Drawing.Size(46, 26)
+        Me.txtDie1.TabIndex = 10
+        Me.txtDie1.Text = "1"
+        Me.txtDie1.Visible = False
+        '
+        'txtDie2
+        '
+        Me.txtDie2.Location = New System.Drawing.Point(102, 197)
+        Me.txtDie2.Name = "txtDie2"
+        Me.txtDie2.Size = New System.Drawing.Size(46, 26)
+        Me.txtDie2.TabIndex = 11
+        Me.txtDie2.Text = "1"
+        Me.txtDie2.Visible = False
+        '
+        'txtDie3
+        '
+        Me.txtDie3.Location = New System.Drawing.Point(186, 197)
+        Me.txtDie3.Name = "txtDie3"
+        Me.txtDie3.Size = New System.Drawing.Size(46, 26)
+        Me.txtDie3.TabIndex = 12
+        Me.txtDie3.Text = "1"
+        Me.txtDie3.Visible = False
+        '
+        'txtDie4
+        '
+        Me.txtDie4.Location = New System.Drawing.Point(270, 197)
+        Me.txtDie4.Name = "txtDie4"
+        Me.txtDie4.Size = New System.Drawing.Size(46, 26)
+        Me.txtDie4.TabIndex = 13
+        Me.txtDie4.Text = "1"
+        '
+        'txtDie5
+        '
+        Me.txtDie5.Location = New System.Drawing.Point(354, 200)
+        Me.txtDie5.Name = "txtDie5"
+        Me.txtDie5.Size = New System.Drawing.Size(46, 26)
+        Me.txtDie5.TabIndex = 14
+        Me.txtDie5.Text = "1"
+        Me.txtDie5.Visible = False
+        '
         'yahtzee
         '
         Me.AcceptButton = Me.btnRoll
@@ -482,7 +549,9 @@ Partial Class yahtzee
         Me.Name = "yahtzee"
         Me.Text = "Yahtzee"
         Me.grpDice.ResumeLayout(False)
+        Me.grpDice.PerformLayout()
         Me.grpMenu.ResumeLayout(False)
+        Me.grpMenu.PerformLayout()
         Me.GbxScore.ResumeLayout(False)
         Me.GbxScore.PerformLayout()
         Me.ResumeLayout(False)
@@ -525,4 +594,10 @@ Partial Class yahtzee
     Friend WithEvents rdbTwos As RadioButton
     Friend WithEvents rdbOnes As RadioButton
     Friend WithEvents btnMarkScore As Button
+    Friend WithEvents cbxDebug As CheckBox
+    Friend WithEvents txtDie5 As TextBox
+    Friend WithEvents txtDie4 As TextBox
+    Friend WithEvents txtDie3 As TextBox
+    Friend WithEvents txtDie2 As TextBox
+    Friend WithEvents txtDie1 As TextBox
 End Class

@@ -304,7 +304,7 @@
         If intDiceArray(0) = intDiceArray(1) = intDiceArray(2) = intDiceArray(3) = intDiceArray(4) Then
             lstScores.Items(15) = "YAHTZEE" & ControlChars.Tab & "50"
         Else
-            lstScores.Items(15) = "YAHTZEE" & ControlChars.Tab & "50"
+            lstScores.Items(15) = "YAHTZEE" & ControlChars.Tab & "0"
         End If
         'Setting the radio button to invisible so player can only play 1x
         rdbYahtzee.Visible = False
