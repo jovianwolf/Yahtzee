@@ -80,6 +80,25 @@
             'switch boolean so handler knows that menu is off
             blnMenu = False
         End If
+
+        'Added to enable debug menu
+        If cbxDebug.Checked = True Then
+            btnDebugRoll.Visible = True
+            txtDie1.Visible = True
+            txtDie2.Visible = True
+            txtDie3.Visible = True
+            txtDie4.Visible = True
+            txtDie5.Visible = True
+        Else
+            btnDebugRoll.Visible = False
+            txtDie1.Visible = False
+            txtDie2.Visible = False
+            txtDie3.Visible = False
+            txtDie4.Visible = False
+            txtDie5.Visible = False
+        End If
+
+
     End Sub
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
@@ -91,85 +110,78 @@
         Dim strInputError As String = "Dice must be a number 1-6"
 
         'Checks if debug mode is enabled and shows the player input boxes if so
-        If cbxDebug.Checked = True Then
-            txtDie1.Visible = True
-            If IsNumeric(txtDie1.Text) Then
+
+        If IsNumeric(txtDie1.Text) Then
                 If CInt(txtDie1.Text) > 0 And CInt(txtDie1.Text) < 7 Then
                     btnRollDie1.Tag = txtDie1.Text
                     btnKeepDie1.Tag = txtDie1.Text
-                    Call DiceFace(btnKeepDie1)
-                Else
+                Call DiceFace(btnKeepDie1)
+                Call DiceFace(btnRollDie1)
+            Else
                     MsgBox("Dice 1: " & strInputError)
                 End If
             Else
                 MsgBox("Dice 1: " & strInputError)
             End If
 
-            txtDie2.Visible = True
-            If IsNumeric(txtDie2.Text) Then
+        If IsNumeric(txtDie2.Text) Then
                 If CInt(txtDie2.Text) > 0 And CInt(txtDie2.Text) < 7 Then
                     btnRollDie2.Tag = txtDie2.Text
                     btnKeepDie2.Tag = txtDie2.Text
-                    Call DiceFace(btnKeepDie2)
-                Else
+                Call DiceFace(btnKeepDie2)
+                Call DiceFace(btnRollDie2)
+            Else
                     MsgBox("Dice 2: " & strInputError)
                 End If
             Else
                 MsgBox("Dice 2: " & strInputError)
             End If
 
-            txtDie3.Visible = True
-            If IsNumeric(txtDie3.Text) Then
+        If IsNumeric(txtDie3.Text) Then
                 If CInt(txtDie3.Text) > 0 And CInt(txtDie3.Text) < 7 Then
                     btnRollDie3.Tag = txtDie3.Text
                     btnKeepDie3.Tag = txtDie3.Text
-                    Call DiceFace(btnKeepDie3)
-                Else
+                Call DiceFace(btnKeepDie3)
+                Call DiceFace(btnRollDie3)
+            Else
                     MsgBox("Dice 3: " & strInputError)
                 End If
             Else
                 MsgBox("Dice 3: " & strInputError)
             End If
 
-            txtDie4.Visible = True
-            If IsNumeric(txtDie4.Text) Then
+        If IsNumeric(txtDie4.Text) Then
                 If CInt(txtDie4.Text) > 0 And CInt(txtDie4.Text) < 7 Then
                     btnRollDie4.Tag = txtDie4.Text
                     btnKeepDie4.Tag = txtDie4.Text
-                    Call DiceFace(btnKeepDie4)
-                Else
+                Call DiceFace(btnKeepDie4)
+                Call DiceFace(btnRollDie4)
+            Else
                     MsgBox("Dice 4: " & strInputError)
                 End If
             Else
                 MsgBox("Dice 4: " & strInputError)
             End If
 
-            txtDie5.Visible = True
-            If IsNumeric(txtDie5.Text) Then
+        If IsNumeric(txtDie5.Text) Then
                 If CInt(txtDie5.Text) > 0 And CInt(txtDie5.Text) < 7 Then
                     btnRollDie5.Tag = txtDie5.Text
                     btnKeepDie5.Tag = txtDie5.Text
-                    Call DiceFace(btnKeepDie5)
-                Else
+                Call DiceFace(btnKeepDie5)
+                Call DiceFace(btnRollDie5)
+            Else
                     MsgBox("Dice 5: " & strInputError)
                 End If
             Else
                 MsgBox("Dice 5: " & strInputError)
             End If
 
-        End If
     End Sub
 
     Private Sub btnRoll_Click(sender As Object, e As EventArgs) Handles btnRoll.Click
         'Will need to change this to be an array that can dynamically change depending on the visibility of the buttons
         'Example, if user is only re-rolling 2 dice, we shouldn't roll 6 randoms
         Dim intDice(6) As Integer
-
-        If cbxDebug.Checked = True Then
-            btnDebugRoll.Visible = True
-        Else
-            btnDebugRoll.Visible = False
-        End If
 
         'This is probably where we should add the cloned die facing to the held dice button row -may remove this comment later if dumb idea...
         If btnRollDie1.Visible = True Then
@@ -381,6 +393,8 @@
     End Sub
 
     Private Sub ScoreYahtzee(intDiceArray)
+        'This is busted for now because below doesn't work for comparing all
+        'objects in the array as the same (for some reason?)
         If intDiceArray(0) = intDiceArray(1) = intDiceArray(2) = intDiceArray(3) = intDiceArray(4) Then
             lstScores.Items(15) = "YAHTZEE" & ControlChars.Tab & "50"
         Else
