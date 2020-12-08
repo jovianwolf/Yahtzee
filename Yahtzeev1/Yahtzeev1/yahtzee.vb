@@ -51,6 +51,10 @@
         'And follow similar convention with unique subroutines (for concise-ness?)
         If rdbYahtzee.Checked And rdbYahtzee.Visible = True Then
             Call ScoreYahtzee(DiceToScore)
+
+        ElseIf rdbChance.Checked And rdbChance.Visible = True Then
+            Call ScoreChance(DiceToScore)
+
         End If
         GbxScore.Visible = False
     End Sub
@@ -423,5 +427,21 @@
         rdbYahtzee.Visible = False
     End Sub
 
+    'Subroutine called when Chance is marked for scoring
+    Private Sub ScoreChance(intDiceArray)
+        'To store the total of all die faces added up for chance
+        Dim intTotal As Integer
 
+
+        'this steps through the array and keeps a running total to add to chance score
+        For intX = 0 To intDiceArray.Length - 1
+
+            intTotal += intDiceArray(intX)
+        Next
+
+        lstScores.Items(14) = "Chance" & ControlChars.Tab & ControlChars.Tab & CStr(intTotal)
+
+        'Setting the radio button to invisible so player can only play 1x
+        rdbChance.Visible = False
+    End Sub
 End Class
