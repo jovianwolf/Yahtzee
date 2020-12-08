@@ -1,6 +1,14 @@
 ﻿Public Class yahtzee
     'boolean to determine if the menu is shown or not
     Dim blnMenu As Boolean = False
+    'integer between 0 and 3 for how many times they've rolled
+    Dim intRollNum As Integer = 0
+    'Adding variables to keep track of player roll choice
+    Dim blnRollDie1 As Boolean
+    Dim blnRollDie2 As Boolean
+    Dim blnRollDie3 As Boolean
+    Dim blnRollDie4 As Boolean
+    Dim blnRollDie5 As Boolean
 
     '-----------
     'LOAD EVENT
@@ -64,13 +72,6 @@
         'Example, if user is only re-rolling 2 dice, we shouldn't roll 6 randoms
         Dim intDice(6) As Integer
 
-        'Adding variables to keep track of player roll choice
-        Dim blnRollDie1 As Boolean
-        Dim blnRollDie2 As Boolean
-        Dim blnRollDie3 As Boolean
-        Dim blnRollDie4 As Boolean
-        Dim blnRollDie5 As Boolean
-
         'This is probably where we should add the cloned die facing to the held dice button row -may remove this comment later if dumb idea...
         If btnRollDie1.Visible = True Then
             blnRollDie1 = True
@@ -123,9 +124,29 @@
             Call DiceFace(objDice(IntX))
         Next
 
+        'increment roll counter by 1 & reset if big, set dice visibility
+        intRollNum = intRollNum + 1
+        If intRollNum = 4 Then
+            intRollNum = 0
+            btnKeepDie1.Visible = False
+            btnRollDie1.Visible = True
+            blnRollDie1 = True
+            btnKeepDie2.Visible = False
+            btnRollDie2.Visible = True
+            blnRollDie2 = True
+            btnKeepDie3.Visible = False
+            btnRollDie3.Visible = True
+            blnRollDie3 = True
+            btnKeepDie4.Visible = False
+            btnRollDie4.Visible = True
+            blnRollDie4 = True
+            btnKeepDie5.Visible = False
+            btnRollDie5.Visible = True
+            blnRollDie5 = True
+        End If
+
         'This comment can be removed at a later time, was here for debug testing before images were applied
         MsgBox("Dice rolls are as follows 1-5: " & " " & CStr(btnRollDie1.Tag) & ", " & CStr(btnRollDie2.Tag) & ", " & CStr(btnRollDie3.Tag) & ", " & CStr(btnRollDie4.Tag) & ", " & CStr(btnRollDie5.Tag))
-
     End Sub
 
     '10 HANDLERS TO CONTROL KEEP/ROLL STATE OF DICE BUTTONS
