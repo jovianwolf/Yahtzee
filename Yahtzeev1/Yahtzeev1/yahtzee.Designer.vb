@@ -43,20 +43,20 @@ Partial Class yahtzee
         Me.lblRoll = New System.Windows.Forms.Label()
         Me.btnScore = New System.Windows.Forms.Button()
         Me.GbxScore = New System.Windows.Forms.GroupBox()
-        Me.btnMarkScore = New System.Windows.Forms.Button()
-        Me.rdbOnes = New System.Windows.Forms.RadioButton()
-        Me.rdbTwos = New System.Windows.Forms.RadioButton()
-        Me.rdbThrees = New System.Windows.Forms.RadioButton()
-        Me.rdbFours = New System.Windows.Forms.RadioButton()
-        Me.rdbFives = New System.Windows.Forms.RadioButton()
-        Me.rdbSixes = New System.Windows.Forms.RadioButton()
-        Me.rdb3OfKind = New System.Windows.Forms.RadioButton()
-        Me.rdb4OfKind = New System.Windows.Forms.RadioButton()
-        Me.rdbFullHouse = New System.Windows.Forms.RadioButton()
-        Me.rdbSmStraight = New System.Windows.Forms.RadioButton()
-        Me.rdbLgStraight = New System.Windows.Forms.RadioButton()
-        Me.rdbYahtzee = New System.Windows.Forms.RadioButton()
         Me.rdbChance = New System.Windows.Forms.RadioButton()
+        Me.rdbYahtzee = New System.Windows.Forms.RadioButton()
+        Me.rdbLgStraight = New System.Windows.Forms.RadioButton()
+        Me.rdbSmStraight = New System.Windows.Forms.RadioButton()
+        Me.rdbFullHouse = New System.Windows.Forms.RadioButton()
+        Me.rdb4OfKind = New System.Windows.Forms.RadioButton()
+        Me.rdb3OfKind = New System.Windows.Forms.RadioButton()
+        Me.rdbSixes = New System.Windows.Forms.RadioButton()
+        Me.rdbFives = New System.Windows.Forms.RadioButton()
+        Me.rdbFours = New System.Windows.Forms.RadioButton()
+        Me.rdbThrees = New System.Windows.Forms.RadioButton()
+        Me.rdbTwos = New System.Windows.Forms.RadioButton()
+        Me.rdbOnes = New System.Windows.Forms.RadioButton()
+        Me.btnMarkScore = New System.Windows.Forms.Button()
         Me.grpDice.SuspendLayout()
         Me.grpMenu.SuspendLayout()
         Me.GbxScore.SuspendLayout()
@@ -310,135 +310,16 @@ Partial Class yahtzee
         Me.GbxScore.Text = "Yahtzee Scoring"
         Me.GbxScore.Visible = False
         '
-        'btnMarkScore
+        'rdbChance
         '
-        Me.btnMarkScore.Location = New System.Drawing.Point(119, 447)
-        Me.btnMarkScore.Name = "btnMarkScore"
-        Me.btnMarkScore.Size = New System.Drawing.Size(75, 27)
-        Me.btnMarkScore.TabIndex = 0
-        Me.btnMarkScore.Text = "Button1"
-        Me.btnMarkScore.UseVisualStyleBackColor = True
-        '
-        'rdbOnes
-        '
-        Me.rdbOnes.AutoSize = True
-        Me.rdbOnes.Location = New System.Drawing.Point(7, 39)
-        Me.rdbOnes.Name = "rdbOnes"
-        Me.rdbOnes.Size = New System.Drawing.Size(72, 24)
-        Me.rdbOnes.TabIndex = 1
-        Me.rdbOnes.TabStop = True
-        Me.rdbOnes.Text = "Ones"
-        Me.rdbOnes.UseVisualStyleBackColor = True
-        '
-        'rdbTwos
-        '
-        Me.rdbTwos.AutoSize = True
-        Me.rdbTwos.Location = New System.Drawing.Point(6, 69)
-        Me.rdbTwos.Name = "rdbTwos"
-        Me.rdbTwos.Size = New System.Drawing.Size(71, 24)
-        Me.rdbTwos.TabIndex = 2
-        Me.rdbTwos.TabStop = True
-        Me.rdbTwos.Text = "Twos"
-        Me.rdbTwos.UseVisualStyleBackColor = True
-        '
-        'rdbThrees
-        '
-        Me.rdbThrees.AutoSize = True
-        Me.rdbThrees.Location = New System.Drawing.Point(6, 97)
-        Me.rdbThrees.Name = "rdbThrees"
-        Me.rdbThrees.Size = New System.Drawing.Size(83, 24)
-        Me.rdbThrees.TabIndex = 3
-        Me.rdbThrees.TabStop = True
-        Me.rdbThrees.Text = "Threes"
-        Me.rdbThrees.UseVisualStyleBackColor = True
-        '
-        'rdbFours
-        '
-        Me.rdbFours.AutoSize = True
-        Me.rdbFours.Location = New System.Drawing.Point(7, 127)
-        Me.rdbFours.Name = "rdbFours"
-        Me.rdbFours.Size = New System.Drawing.Size(75, 24)
-        Me.rdbFours.TabIndex = 4
-        Me.rdbFours.TabStop = True
-        Me.rdbFours.Text = "Fours"
-        Me.rdbFours.UseVisualStyleBackColor = True
-        '
-        'rdbFives
-        '
-        Me.rdbFives.AutoSize = True
-        Me.rdbFives.Location = New System.Drawing.Point(7, 157)
-        Me.rdbFives.Name = "rdbFives"
-        Me.rdbFives.Size = New System.Drawing.Size(71, 24)
-        Me.rdbFives.TabIndex = 5
-        Me.rdbFives.TabStop = True
-        Me.rdbFives.Text = "Fives"
-        Me.rdbFives.UseVisualStyleBackColor = True
-        '
-        'rdbSixes
-        '
-        Me.rdbSixes.AutoSize = True
-        Me.rdbSixes.Location = New System.Drawing.Point(7, 187)
-        Me.rdbSixes.Name = "rdbSixes"
-        Me.rdbSixes.Size = New System.Drawing.Size(72, 24)
-        Me.rdbSixes.TabIndex = 6
-        Me.rdbSixes.TabStop = True
-        Me.rdbSixes.Text = "Sixes"
-        Me.rdbSixes.UseVisualStyleBackColor = True
-        '
-        'rdb3OfKind
-        '
-        Me.rdb3OfKind.AutoSize = True
-        Me.rdb3OfKind.Location = New System.Drawing.Point(6, 244)
-        Me.rdb3OfKind.Name = "rdb3OfKind"
-        Me.rdb3OfKind.Size = New System.Drawing.Size(144, 24)
-        Me.rdb3OfKind.TabIndex = 7
-        Me.rdb3OfKind.TabStop = True
-        Me.rdb3OfKind.Text = "Three-of-a-Kind"
-        Me.rdb3OfKind.UseVisualStyleBackColor = True
-        '
-        'rdb4OfKind
-        '
-        Me.rdb4OfKind.AutoSize = True
-        Me.rdb4OfKind.Location = New System.Drawing.Point(6, 274)
-        Me.rdb4OfKind.Name = "rdb4OfKind"
-        Me.rdb4OfKind.Size = New System.Drawing.Size(136, 24)
-        Me.rdb4OfKind.TabIndex = 8
-        Me.rdb4OfKind.TabStop = True
-        Me.rdb4OfKind.Text = "Four-of-a-Kind"
-        Me.rdb4OfKind.UseVisualStyleBackColor = True
-        '
-        'rdbFullHouse
-        '
-        Me.rdbFullHouse.AutoSize = True
-        Me.rdbFullHouse.Location = New System.Drawing.Point(7, 304)
-        Me.rdbFullHouse.Name = "rdbFullHouse"
-        Me.rdbFullHouse.Size = New System.Drawing.Size(110, 24)
-        Me.rdbFullHouse.TabIndex = 9
-        Me.rdbFullHouse.TabStop = True
-        Me.rdbFullHouse.Text = "Full House"
-        Me.rdbFullHouse.UseVisualStyleBackColor = True
-        '
-        'rdbSmStraight
-        '
-        Me.rdbSmStraight.AutoSize = True
-        Me.rdbSmStraight.Location = New System.Drawing.Point(7, 334)
-        Me.rdbSmStraight.Name = "rdbSmStraight"
-        Me.rdbSmStraight.Size = New System.Drawing.Size(133, 24)
-        Me.rdbSmStraight.TabIndex = 10
-        Me.rdbSmStraight.TabStop = True
-        Me.rdbSmStraight.Text = "Small Straight"
-        Me.rdbSmStraight.UseVisualStyleBackColor = True
-        '
-        'rdbLgStraight
-        '
-        Me.rdbLgStraight.AutoSize = True
-        Me.rdbLgStraight.Location = New System.Drawing.Point(7, 364)
-        Me.rdbLgStraight.Name = "rdbLgStraight"
-        Me.rdbLgStraight.Size = New System.Drawing.Size(135, 24)
-        Me.rdbLgStraight.TabIndex = 11
-        Me.rdbLgStraight.TabStop = True
-        Me.rdbLgStraight.Text = "Large Straight"
-        Me.rdbLgStraight.UseVisualStyleBackColor = True
+        Me.rdbChance.AutoSize = True
+        Me.rdbChance.Location = New System.Drawing.Point(7, 424)
+        Me.rdbChance.Name = "rdbChance"
+        Me.rdbChance.Size = New System.Drawing.Size(89, 24)
+        Me.rdbChance.TabIndex = 13
+        Me.rdbChance.TabStop = True
+        Me.rdbChance.Text = "Chance"
+        Me.rdbChance.UseVisualStyleBackColor = True
         '
         'rdbYahtzee
         '
@@ -451,16 +332,135 @@ Partial Class yahtzee
         Me.rdbYahtzee.Text = "Yahtzee!"
         Me.rdbYahtzee.UseVisualStyleBackColor = True
         '
-        'rdbChance
+        'rdbLgStraight
         '
-        Me.rdbChance.AutoSize = True
-        Me.rdbChance.Location = New System.Drawing.Point(7, 424)
-        Me.rdbChance.Name = "rdbChance"
-        Me.rdbChance.Size = New System.Drawing.Size(89, 24)
-        Me.rdbChance.TabIndex = 13
-        Me.rdbChance.TabStop = True
-        Me.rdbChance.Text = "Chance"
-        Me.rdbChance.UseVisualStyleBackColor = True
+        Me.rdbLgStraight.AutoSize = True
+        Me.rdbLgStraight.Location = New System.Drawing.Point(7, 364)
+        Me.rdbLgStraight.Name = "rdbLgStraight"
+        Me.rdbLgStraight.Size = New System.Drawing.Size(135, 24)
+        Me.rdbLgStraight.TabIndex = 11
+        Me.rdbLgStraight.TabStop = True
+        Me.rdbLgStraight.Text = "Large Straight"
+        Me.rdbLgStraight.UseVisualStyleBackColor = True
+        '
+        'rdbSmStraight
+        '
+        Me.rdbSmStraight.AutoSize = True
+        Me.rdbSmStraight.Location = New System.Drawing.Point(7, 334)
+        Me.rdbSmStraight.Name = "rdbSmStraight"
+        Me.rdbSmStraight.Size = New System.Drawing.Size(133, 24)
+        Me.rdbSmStraight.TabIndex = 10
+        Me.rdbSmStraight.TabStop = True
+        Me.rdbSmStraight.Text = "Small Straight"
+        Me.rdbSmStraight.UseVisualStyleBackColor = True
+        '
+        'rdbFullHouse
+        '
+        Me.rdbFullHouse.AutoSize = True
+        Me.rdbFullHouse.Location = New System.Drawing.Point(7, 304)
+        Me.rdbFullHouse.Name = "rdbFullHouse"
+        Me.rdbFullHouse.Size = New System.Drawing.Size(110, 24)
+        Me.rdbFullHouse.TabIndex = 9
+        Me.rdbFullHouse.TabStop = True
+        Me.rdbFullHouse.Text = "Full House"
+        Me.rdbFullHouse.UseVisualStyleBackColor = True
+        '
+        'rdb4OfKind
+        '
+        Me.rdb4OfKind.AutoSize = True
+        Me.rdb4OfKind.Location = New System.Drawing.Point(6, 274)
+        Me.rdb4OfKind.Name = "rdb4OfKind"
+        Me.rdb4OfKind.Size = New System.Drawing.Size(136, 24)
+        Me.rdb4OfKind.TabIndex = 8
+        Me.rdb4OfKind.TabStop = True
+        Me.rdb4OfKind.Text = "Four-of-a-Kind"
+        Me.rdb4OfKind.UseVisualStyleBackColor = True
+        '
+        'rdb3OfKind
+        '
+        Me.rdb3OfKind.AutoSize = True
+        Me.rdb3OfKind.Location = New System.Drawing.Point(6, 244)
+        Me.rdb3OfKind.Name = "rdb3OfKind"
+        Me.rdb3OfKind.Size = New System.Drawing.Size(144, 24)
+        Me.rdb3OfKind.TabIndex = 7
+        Me.rdb3OfKind.TabStop = True
+        Me.rdb3OfKind.Text = "Three-of-a-Kind"
+        Me.rdb3OfKind.UseVisualStyleBackColor = True
+        '
+        'rdbSixes
+        '
+        Me.rdbSixes.AutoSize = True
+        Me.rdbSixes.Location = New System.Drawing.Point(7, 187)
+        Me.rdbSixes.Name = "rdbSixes"
+        Me.rdbSixes.Size = New System.Drawing.Size(72, 24)
+        Me.rdbSixes.TabIndex = 6
+        Me.rdbSixes.TabStop = True
+        Me.rdbSixes.Text = "Sixes"
+        Me.rdbSixes.UseVisualStyleBackColor = True
+        '
+        'rdbFives
+        '
+        Me.rdbFives.AutoSize = True
+        Me.rdbFives.Location = New System.Drawing.Point(7, 157)
+        Me.rdbFives.Name = "rdbFives"
+        Me.rdbFives.Size = New System.Drawing.Size(71, 24)
+        Me.rdbFives.TabIndex = 5
+        Me.rdbFives.TabStop = True
+        Me.rdbFives.Text = "Fives"
+        Me.rdbFives.UseVisualStyleBackColor = True
+        '
+        'rdbFours
+        '
+        Me.rdbFours.AutoSize = True
+        Me.rdbFours.Location = New System.Drawing.Point(7, 127)
+        Me.rdbFours.Name = "rdbFours"
+        Me.rdbFours.Size = New System.Drawing.Size(75, 24)
+        Me.rdbFours.TabIndex = 4
+        Me.rdbFours.TabStop = True
+        Me.rdbFours.Text = "Fours"
+        Me.rdbFours.UseVisualStyleBackColor = True
+        '
+        'rdbThrees
+        '
+        Me.rdbThrees.AutoSize = True
+        Me.rdbThrees.Location = New System.Drawing.Point(6, 97)
+        Me.rdbThrees.Name = "rdbThrees"
+        Me.rdbThrees.Size = New System.Drawing.Size(83, 24)
+        Me.rdbThrees.TabIndex = 3
+        Me.rdbThrees.TabStop = True
+        Me.rdbThrees.Text = "Threes"
+        Me.rdbThrees.UseVisualStyleBackColor = True
+        '
+        'rdbTwos
+        '
+        Me.rdbTwos.AutoSize = True
+        Me.rdbTwos.Location = New System.Drawing.Point(6, 69)
+        Me.rdbTwos.Name = "rdbTwos"
+        Me.rdbTwos.Size = New System.Drawing.Size(71, 24)
+        Me.rdbTwos.TabIndex = 2
+        Me.rdbTwos.TabStop = True
+        Me.rdbTwos.Text = "Twos"
+        Me.rdbTwos.UseVisualStyleBackColor = True
+        '
+        'rdbOnes
+        '
+        Me.rdbOnes.AutoSize = True
+        Me.rdbOnes.Location = New System.Drawing.Point(7, 39)
+        Me.rdbOnes.Name = "rdbOnes"
+        Me.rdbOnes.Size = New System.Drawing.Size(72, 24)
+        Me.rdbOnes.TabIndex = 1
+        Me.rdbOnes.TabStop = True
+        Me.rdbOnes.Text = "Ones"
+        Me.rdbOnes.UseVisualStyleBackColor = True
+        '
+        'btnMarkScore
+        '
+        Me.btnMarkScore.Location = New System.Drawing.Point(102, 447)
+        Me.btnMarkScore.Name = "btnMarkScore"
+        Me.btnMarkScore.Size = New System.Drawing.Size(104, 27)
+        Me.btnMarkScore.TabIndex = 0
+        Me.btnMarkScore.Text = "Mark Score"
+        Me.btnMarkScore.UseVisualStyleBackColor = True
         '
         'yahtzee
         '

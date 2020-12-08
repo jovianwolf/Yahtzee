@@ -36,6 +36,23 @@
     '----------------
     'BUTTON HANDLERS
     '----------------
+    Private Sub btnScore_Click(sender As Object, e As EventArgs) Handles btnScore.Click
+        'code to make the score groupbox visible if user wants to score before 3x rolls
+    End Sub
+
+    'Button handler for submitting the player selected score option for scoring
+    Private Sub btnMarkScore_Click(sender As Object, e As EventArgs) Handles btnMarkScore.Click
+        'Doing some trickery here to pull the current tagged value of the dice from the Roll Row back
+        'This builds the array to work out of for comparing scores below
+        Dim DiceToScore() As Integer = {CInt(btnRollDie1.Tag), CInt(btnRollDie2.Tag), CInt(btnRollDie3.Tag), CInt(btnRollDie4.Tag), CInt(btnRollDie5.Tag)}
+
+        'The First coded score is Yahtzee, need to add more in this If Statement as ElseIfs
+        'And follow similar convention with unique subroutines (for concise-ness?)
+        If rdbYahtzee.Checked Then
+            Call ScoreYahtzee(DiceToScore)
+        End If
+    End Sub
+
     Private Sub btnMenu_Click(sender As Object, e As EventArgs) Handles btnMenu.Click
         'menu button handler
         If blnMenu = False Then
@@ -279,5 +296,15 @@
         For count = 1 To 10000000
             count = count + 1
         Next
+    End Sub
+
+    Private Sub ScoreYahtzee(intDiceArray)
+        If intDiceArray(0) = intDiceArray(1) = intDiceArray(2) = intDiceArray(3) = intDiceArray(4) Then
+            lstScores.Items(14) = "YAHTZEE" & ControlChars.Tab & "50"
+        Else
+            lstScores.Items(14) = "YAHTZEE" & ControlChars.Tab & "50"
+        End If
+        'Setting the radio button to invisible so player can only play 1x
+        rdbYahtzee.Visible = False
     End Sub
 End Class
