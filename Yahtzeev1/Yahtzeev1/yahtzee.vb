@@ -55,6 +55,9 @@
         ElseIf rdbChance.Checked And rdbChance.Visible = True Then
             Call ScoreChance(DiceToScore)
 
+        ElseIf rdbLgStraight.Checked And rdbLgStraight.Visible = True Then
+            Call ScoreLargeStriaght(DiceToScore)
+
         End If
         GbxScore.Visible = False
     End Sub
@@ -396,6 +399,30 @@
         For count = 1 To 10000000
             count = count + 1
         Next
+    End Sub
+
+    'Subroutine called when Large Straight is marked for scoring
+    Private Sub ScoreLargeStriaght(intDiceArray)
+
+        Dim blnPositiveStraight As Boolean
+        Dim blnNegativeStraight As Boolean
+
+        'this steps through the array and will compare element X to Element Y to see if it is within + or - 1 of the next element
+        'For intX = 0 To intDiceArray.Length - 1
+
+
+
+        'Next
+
+
+        If blnPositiveStraight Or blnNegativeStraight = True Then
+            lstScores.Items(13) = "L Straight" & ControlChars.Tab & ControlChars.Tab & "40"
+        Else
+            lstScores.Items(13) = "L Straight" & ControlChars.Tab & ControlChars.Tab & "0"
+        End If
+
+        'Setting the radio button to invisible so player can only play 1x
+        rdbLgStraight.Visible = False
     End Sub
 
     'Subroutine called when Yahtzee is marked and needs to validate for scoring
