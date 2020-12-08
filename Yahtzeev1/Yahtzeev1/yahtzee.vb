@@ -113,7 +113,8 @@
         'This had to be a pre-test loop array to catch is player was holding on to the dice in order to work correctly
         For IntX = 0 To blnDiceRoll.Length - 1
             If blnDiceRoll(IntX) = False Then
-                MsgBox("you are keeping " & objDice(IntX).Tag)
+                'this will show what dice are kept by player can be removed
+                'MsgBox("you are keeping " & objDice(IntX).Tag)
             Else
                 intDice(IntX) = RandomizeDice(IntX)
                 Randomize(Now.Millisecond)
@@ -146,7 +147,7 @@
         End If
 
         'This comment can be removed at a later time, was here for debug testing before images were applied
-        MsgBox("Dice rolls are as follows 1-5: " & " " & CStr(btnRollDie1.Tag) & ", " & CStr(btnRollDie2.Tag) & ", " & CStr(btnRollDie3.Tag) & ", " & CStr(btnRollDie4.Tag) & ", " & CStr(btnRollDie5.Tag))
+        'MsgBox("Dice rolls are as follows 1-5: " & " " & CStr(btnRollDie1.Tag) & ", " & CStr(btnRollDie2.Tag) & ", " & CStr(btnRollDie3.Tag) & ", " & CStr(btnRollDie4.Tag) & ", " & CStr(btnRollDie5.Tag))
     End Sub
 
     '10 HANDLERS TO CONTROL KEEP/ROLL STATE OF DICE BUTTONS
