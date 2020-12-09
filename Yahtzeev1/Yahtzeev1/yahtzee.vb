@@ -56,7 +56,7 @@
             Call ScoreChance(DiceToScore)
 
         ElseIf rdbLgStraight.Checked And rdbLgStraight.Visible = True Then
-            Call ScoreLargeStriaght(DiceToScore)
+            Call ScoreLargeStraight(DiceToScore)
 
         End If
         GbxScore.Visible = False
@@ -402,7 +402,7 @@
     End Sub
 
     'Subroutine called when Large Straight is marked for scoring
-    Private Sub ScoreLargeStriaght(intDiceArray)
+    Private Sub ScoreLargeStraight(intDiceArray)
 
         Dim blnPositiveStraight As Boolean
         Dim blnNegativeStraight As Boolean
