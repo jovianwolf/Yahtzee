@@ -407,12 +407,23 @@
         Dim blnPositiveStraight As Boolean
         Dim blnNegativeStraight As Boolean
 
-        'this steps through the array and will compare element X to Element Y to see if it is within + or - 1 of the next element
-        'For intX = 0 To intDiceArray.Length - 1
+        'this is WIP and is not yet functional
+        'used -2 to prevent overload of comparison of next object in array out of array bounds
+        For intX = 0 To intDiceArray.Length - 2
+            If intDiceArray(intX) > intDiceArray(intX + 1) Then
+                blnNegativeStraight = True
+
+            Else blnNegativeStraight = False
+            End If
+
+            If intDiceArray(intX) < intDiceArray(intX + 1) Then
+                blnPositiveStraight = True
+
+            Else blnPositiveStraight = False
+            End If
 
 
-
-        'Next
+        Next
 
 
         If blnPositiveStraight Or blnNegativeStraight = True Then
