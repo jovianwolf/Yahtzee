@@ -120,6 +120,10 @@
             rdbOnes.Visible = False
 
         End If
+
+        'Re-enable roll button (has been disabled in btnRoll_Click if 3rd roll)
+        btnRoll.Enabled = True
+        'Hide score group
         GbxScore.Visible = False
     End Sub
 
@@ -325,6 +329,12 @@
             btnKeepDie5.Visible = False
             btnRollDie5.Visible = True
             blnRollDie5 = True
+        End If
+
+        'Disable roll button on 3rd roll to force user to score their rolls
+        If intRollNum = 3 Then
+            btnRoll.Enabled = False
+            btnScore.PerformClick()
         End If
 
         'This comment can be removed at a later time, was here for debug testing before images were applied
