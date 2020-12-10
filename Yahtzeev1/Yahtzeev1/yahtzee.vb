@@ -63,9 +63,9 @@
             intTotal = (ScoreSameFace(DiceToScore, 6) * 6)
 
             If intTotal > 0 Then
-                lstScores.Items(7) = "Sixes" & ControlChars.Tab & ControlChars.Tab & intTotal
+                lstScores.Items(6) = "Sixes" & ControlChars.Tab & ControlChars.Tab & intTotal
             Else
-                lstScores.Items(7) = "Sixes" & ControlChars.Tab & ControlChars.Tab & "0"
+                lstScores.Items(6) = "Sixes" & ControlChars.Tab & ControlChars.Tab & "0"
             End If
             rdbSixes.Visible = False
 
@@ -73,9 +73,9 @@
             intTotal = (ScoreSameFace(DiceToScore, 5) * 5)
 
             If intTotal > 0 Then
-                lstScores.Items(6) = "Fives" & ControlChars.Tab & ControlChars.Tab & intTotal
+                lstScores.Items(5) = "Fives" & ControlChars.Tab & ControlChars.Tab & intTotal
             Else
-                lstScores.Items(6) = "Fives" & ControlChars.Tab & ControlChars.Tab & "0"
+                lstScores.Items(5) = "Fives" & ControlChars.Tab & ControlChars.Tab & "0"
             End If
             rdbFives.Visible = False
 
@@ -83,9 +83,9 @@
             intTotal = (ScoreSameFace(DiceToScore, 4) * 4)
 
             If intTotal > 0 Then
-                lstScores.Items(5) = "Fours" & ControlChars.Tab & ControlChars.Tab & intTotal
+                lstScores.Items(4) = "Fours" & ControlChars.Tab & ControlChars.Tab & intTotal
             Else
-                lstScores.Items(5) = "Fours" & ControlChars.Tab & ControlChars.Tab & "0"
+                lstScores.Items(4) = "Fours" & ControlChars.Tab & ControlChars.Tab & "0"
             End If
             rdbFours.Visible = False
 
@@ -93,9 +93,9 @@
             intTotal = (ScoreSameFace(DiceToScore, 3) * 3)
 
             If intTotal > 0 Then
-                lstScores.Items(4) = "Threes" & ControlChars.Tab & ControlChars.Tab & intTotal
+                lstScores.Items(3) = "Threes" & ControlChars.Tab & ControlChars.Tab & intTotal
             Else
-                lstScores.Items(4) = "Threes" & ControlChars.Tab & ControlChars.Tab & "0"
+                lstScores.Items(3) = "Threes" & ControlChars.Tab & ControlChars.Tab & "0"
             End If
             rdbThrees.Visible = False
 
@@ -103,9 +103,9 @@
             intTotal = (ScoreSameFace(DiceToScore, 2) * 2)
 
             If intTotal > 0 Then
-                lstScores.Items(3) = "Twos" & ControlChars.Tab & ControlChars.Tab & intTotal
+                lstScores.Items(2) = "Twos" & ControlChars.Tab & ControlChars.Tab & intTotal
             Else
-                lstScores.Items(3) = "Twos" & ControlChars.Tab & ControlChars.Tab & "0"
+                lstScores.Items(2) = "Twos" & ControlChars.Tab & ControlChars.Tab & "0"
             End If
             rdbTwos.Visible = False
 
@@ -113,9 +113,9 @@
             intTotal = (ScoreSameFace(DiceToScore, 1) * 1)
 
             If intTotal > 0 Then
-                lstScores.Items(2) = "Sixes" & ControlChars.Tab & ControlChars.Tab & intTotal
+                lstScores.Items(1) = "Ones" & ControlChars.Tab & ControlChars.Tab & intTotal
             Else
-                lstScores.Items(2) = "Sixes" & ControlChars.Tab & ControlChars.Tab & "0"
+                lstScores.Items(1) = "Ones" & ControlChars.Tab & ControlChars.Tab & "0"
             End If
             rdbOnes.Visible = False
 
