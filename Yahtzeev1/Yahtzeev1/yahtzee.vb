@@ -46,6 +46,7 @@
         'Doing some trickery here to pull the current tagged value of the dice from the Roll Row back
         'This builds the array to work out of for comparing scores below
         Dim DiceToScore() As Integer = {CInt(btnRollDie1.Tag), CInt(btnRollDie2.Tag), CInt(btnRollDie3.Tag), CInt(btnRollDie4.Tag), CInt(btnRollDie5.Tag)}
+        Dim intTotal As Integer
 
         'The First coded score is Yahtzee, need to add more in this If Statement as ElseIfs
         'And follow similar convention with unique subroutines (for concise-ness?)
@@ -57,6 +58,66 @@
 
         ElseIf rdbLgStraight.Checked And rdbLgStraight.Visible = True Then
             Call ScoreLargeStraight(DiceToScore)
+
+        ElseIf rdbSixes.Checked And rdbSixes.Visible = True Then
+            intTotal = (ScoreSameFace(DiceToScore, 6) * 6)
+
+            If intTotal > 0 Then
+                lstScores.Items(7) = "Sixes" & ControlChars.Tab & ControlChars.Tab & intTotal
+            Else
+                lstScores.Items(7) = "Sixes" & ControlChars.Tab & ControlChars.Tab & "0"
+            End If
+            rdbSixes.Visible = False
+
+        ElseIf rdbFives.Checked And rdbFives.Visible = True Then
+            intTotal = (ScoreSameFace(DiceToScore, 5) * 5)
+
+            If intTotal > 0 Then
+                lstScores.Items(6) = "Fives" & ControlChars.Tab & ControlChars.Tab & intTotal
+            Else
+                lstScores.Items(6) = "Fives" & ControlChars.Tab & ControlChars.Tab & "0"
+            End If
+            rdbFives.Visible = False
+
+        ElseIf rdbFours.Checked And rdbFours.Visible = True Then
+            intTotal = (ScoreSameFace(DiceToScore, 4) * 4)
+
+            If intTotal > 0 Then
+                lstScores.Items(5) = "Fours" & ControlChars.Tab & ControlChars.Tab & intTotal
+            Else
+                lstScores.Items(5) = "Fours" & ControlChars.Tab & ControlChars.Tab & "0"
+            End If
+            rdbFours.Visible = False
+
+        ElseIf rdbThrees.Checked And rdbThrees.Visible = True Then
+            intTotal = (ScoreSameFace(DiceToScore, 3) * 3)
+
+            If intTotal > 0 Then
+                lstScores.Items(4) = "Threes" & ControlChars.Tab & ControlChars.Tab & intTotal
+            Else
+                lstScores.Items(4) = "Threes" & ControlChars.Tab & ControlChars.Tab & "0"
+            End If
+            rdbThrees.Visible = False
+
+        ElseIf rdbTwos.Checked And rdbTwos.Visible = True Then
+            intTotal = (ScoreSameFace(DiceToScore, 2) * 2)
+
+            If intTotal > 0 Then
+                lstScores.Items(3) = "Twos" & ControlChars.Tab & ControlChars.Tab & intTotal
+            Else
+                lstScores.Items(3) = "Twos" & ControlChars.Tab & ControlChars.Tab & "0"
+            End If
+            rdbTwos.Visible = False
+
+        ElseIf rdbOnes.Checked And rdbOnes.Visible = True Then
+            intTotal = (ScoreSameFace(DiceToScore, 1) * 1)
+
+            If intTotal > 0 Then
+                lstScores.Items(2) = "Sixes" & ControlChars.Tab & ControlChars.Tab & intTotal
+            Else
+                lstScores.Items(2) = "Sixes" & ControlChars.Tab & ControlChars.Tab & "0"
+            End If
+            rdbOnes.Visible = False
 
         End If
         GbxScore.Visible = False
@@ -403,7 +464,7 @@
 
     'Subroutine to score ones - sixes
     'can feed any number, will hunt for that number in the given array and will score accordingly
-    Private Function ScoreSameFace(intDiceArray() As Integer, intNumberToFind As Integer)
+    Private Function ScoreSameFace(intDiceArray() As Integer, intNumberToFind As Integer) As Integer
         Dim intOccurrences As Integer
 
         For intX = 0 To intDiceArray.Length - 1
