@@ -401,6 +401,25 @@
         Next
     End Sub
 
+    'Subroutine to score ones - sixes
+    'can feed any number, will hunt for that number in the given array and will score accordingly
+    Private Function ScoreSameFace(intDiceArray() As Integer, intNumberToFind As Integer)
+        Dim intOccurrences As Integer
+
+        For intX = 0 To intDiceArray.Length - 1
+
+            If intDiceArray(intX) = intNumberToFind Then
+
+                intOccurrences += 1
+
+            End If
+
+        Next
+
+        Return intOccurrences
+
+    End Function
+
     'Subroutine called when Large Straight is marked for scoring
     Private Sub ScoreLargeStraight(intDiceArray)
 
