@@ -1,4 +1,10 @@
-﻿Public Class yahtzee
+﻿'-------------------------------------------------------------------------------------------------
+'Program: Lab 3 – Yahtzee
+'Author: Ian Morse, Patrick Reynolds
+'Date: December 11, 2020
+'Description: Program to emulate a single-player version of the popular dice game "Yahtzee"
+'-------------------------------------------------------------------------------------------------
+Public Class yahtzee
     'boolean to determine if the menu is shown or not
     Dim blnMenu As Boolean = False
     'integer between 0 and 3 for how many times they've rolled
@@ -10,9 +16,12 @@
     Dim blnRollDie4 As Boolean
     Dim blnRollDie5 As Boolean
 
-    '-----------
-    'LOAD EVENT
-    '-----------
+    '-------------------------------------------------------------------------------------------------
+    'Subroutine: yahtzee_Load
+    'Author: Ian Morse
+    'Date: December 11, 2020
+    'Description: On load event to set the headers in the listbox for scoring 
+    '-------------------------------------------------------------------------------------------------
     Private Sub yahtzee_Load(sender As Object, e As EventArgs) Handles Me.Load
         lstScores.Items.Add("SCORES") '& ControlChars.Tab & ControlChars.Tab & "You" & ControlChars.Tab & "AI")
         lstScores.Items.Add("Ones")
@@ -36,12 +45,24 @@
     '----------------
     'BUTTON HANDLERS
     '----------------
-    'Button handler to show the score box early if player wishes to score before 3x rolls
+
+    '-------------------------------------------------------------------------------------------------
+    'Subroutine: btnScore_Click
+    'Author: Patrick Reynolds
+    'Date: December 11, 2020
+    'Description: Makes the scoring groupbox visible
+    '-------------------------------------------------------------------------------------------------
     Private Sub btnScore_Click(sender As Object, e As EventArgs) Handles btnScore.Click
         GbxScore.Visible = True
     End Sub
 
-    'Button handler for submitting the player selected score option for scoring
+    '-------------------------------------------------------------------------------------------------
+    'Subroutine: btnMarkScore_Click
+    'Author: Patrick Reynolds, Ian Morse
+    'Date: December 11, 2020
+    'Description: Button handler For submitting the player selected score Option For scoring
+    '             and applies that score to the listbox
+    '-------------------------------------------------------------------------------------------------
     Private Sub btnMarkScore_Click(sender As Object, e As EventArgs) Handles btnMarkScore.Click
         'Doing some trickery here to pull the current tagged value of the dice from the Roll Row back
         'This builds the array to work out of for comparing scores below
@@ -127,6 +148,12 @@
         GbxScore.Visible = False
     End Sub
 
+    '-------------------------------------------------------------------------------------------------
+    'Subroutine: btnMenu_Click
+    'Author: Ian Morse, Patrick Reynolds
+    'Date: December 08, 2020
+    'Description: Button handler opening and closing the menu to access Exit, Restart (not implemented) or Debug
+    '-------------------------------------------------------------------------------------------------
     Private Sub btnMenu_Click(sender As Object, e As EventArgs) Handles btnMenu.Click
         'menu button handler
         If blnMenu = False Then
@@ -171,91 +198,102 @@
             txtDie5.Visible = False
             grpDice.Size = New Size(300, 135)
         End If
-
-
     End Sub
 
+    '-------------------------------------------------------------------------------------------------
+    'Subroutine: btnExit_Click
+    'Author: Ian Morse
+    'Date: December 03, 2020
+    'Description: Button handler to close the program
+    '-------------------------------------------------------------------------------------------------
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Me.Close()
     End Sub
-
-    'Debug Roll handler to feed values into the dice for testing
+    '-------------------------------------------------------------------------------------------------
+    'Subroutine: btnDebugRoll_Click
+    'Author: Patrick Reynolds
+    'Date: December 07, 2020
+    'Description: Debug Roll handler to feed values into the dice for testing
+    '-------------------------------------------------------------------------------------------------
     Private Sub btnDebugRoll_Click(sender As Object, e As EventArgs) Handles btnDebugRoll.Click
         Dim strInputError As String = "Dice must be a number 1-6"
 
         'Checks if debug mode is enabled and shows the player input boxes if so
-
         If IsNumeric(txtDie1.Text) Then
-                If CInt(txtDie1.Text) > 0 And CInt(txtDie1.Text) < 7 Then
-                    btnRollDie1.Tag = txtDie1.Text
-                    btnKeepDie1.Tag = txtDie1.Text
+            If CInt(txtDie1.Text) > 0 And CInt(txtDie1.Text) < 7 Then
+                btnRollDie1.Tag = txtDie1.Text
+                btnKeepDie1.Tag = txtDie1.Text
                 Call DiceFace(btnKeepDie1)
                 Call DiceFace(btnRollDie1)
             Else
-                    MsgBox("Dice 1: " & strInputError)
-                End If
-            Else
                 MsgBox("Dice 1: " & strInputError)
             End If
+        Else
+            MsgBox("Dice 1: " & strInputError)
+        End If
 
         If IsNumeric(txtDie2.Text) Then
-                If CInt(txtDie2.Text) > 0 And CInt(txtDie2.Text) < 7 Then
-                    btnRollDie2.Tag = txtDie2.Text
-                    btnKeepDie2.Tag = txtDie2.Text
+            If CInt(txtDie2.Text) > 0 And CInt(txtDie2.Text) < 7 Then
+                btnRollDie2.Tag = txtDie2.Text
+                btnKeepDie2.Tag = txtDie2.Text
                 Call DiceFace(btnKeepDie2)
                 Call DiceFace(btnRollDie2)
             Else
-                    MsgBox("Dice 2: " & strInputError)
-                End If
-            Else
                 MsgBox("Dice 2: " & strInputError)
             End If
+        Else
+            MsgBox("Dice 2: " & strInputError)
+        End If
 
         If IsNumeric(txtDie3.Text) Then
-                If CInt(txtDie3.Text) > 0 And CInt(txtDie3.Text) < 7 Then
-                    btnRollDie3.Tag = txtDie3.Text
-                    btnKeepDie3.Tag = txtDie3.Text
+            If CInt(txtDie3.Text) > 0 And CInt(txtDie3.Text) < 7 Then
+                btnRollDie3.Tag = txtDie3.Text
+                btnKeepDie3.Tag = txtDie3.Text
                 Call DiceFace(btnKeepDie3)
                 Call DiceFace(btnRollDie3)
             Else
-                    MsgBox("Dice 3: " & strInputError)
-                End If
-            Else
                 MsgBox("Dice 3: " & strInputError)
             End If
+        Else
+            MsgBox("Dice 3: " & strInputError)
+        End If
 
         If IsNumeric(txtDie4.Text) Then
-                If CInt(txtDie4.Text) > 0 And CInt(txtDie4.Text) < 7 Then
-                    btnRollDie4.Tag = txtDie4.Text
-                    btnKeepDie4.Tag = txtDie4.Text
+            If CInt(txtDie4.Text) > 0 And CInt(txtDie4.Text) < 7 Then
+                btnRollDie4.Tag = txtDie4.Text
+                btnKeepDie4.Tag = txtDie4.Text
                 Call DiceFace(btnKeepDie4)
                 Call DiceFace(btnRollDie4)
             Else
-                    MsgBox("Dice 4: " & strInputError)
-                End If
-            Else
                 MsgBox("Dice 4: " & strInputError)
             End If
+        Else
+            MsgBox("Dice 4: " & strInputError)
+        End If
 
         If IsNumeric(txtDie5.Text) Then
-                If CInt(txtDie5.Text) > 0 And CInt(txtDie5.Text) < 7 Then
-                    btnRollDie5.Tag = txtDie5.Text
-                    btnKeepDie5.Tag = txtDie5.Text
+            If CInt(txtDie5.Text) > 0 And CInt(txtDie5.Text) < 7 Then
+                btnRollDie5.Tag = txtDie5.Text
+                btnKeepDie5.Tag = txtDie5.Text
                 Call DiceFace(btnKeepDie5)
                 Call DiceFace(btnRollDie5)
             Else
-                    MsgBox("Dice 5: " & strInputError)
-                End If
-            Else
                 MsgBox("Dice 5: " & strInputError)
             End If
+        Else
+            MsgBox("Dice 5: " & strInputError)
+        End If
 
     End Sub
 
+    '-------------------------------------------------------------------------------------------------
+    'Subroutine: btnRoll_Click
+    'Author: Ian Morse, Patrick Reynolds
+    'Date: December 10, 2020
+    'Description: Debug Roll handler to feed values into the dice for testing
+    '-------------------------------------------------------------------------------------------------
     Private Sub btnRoll_Click(sender As Object, e As EventArgs) Handles btnRoll.Click
-        'Will need to change this to be an array that can dynamically change depending on the visibility of the buttons
-        'Example, if user is only re-rolling 2 dice, we shouldn't roll 6 randoms
-        Dim intDice(6) As Integer
+        Dim intDice(5) As Integer
 
         'This is probably where we should add the cloned die facing to the held dice button row -may remove this comment later if dumb idea...
         If btnRollDie1.Visible = True Then
@@ -336,12 +374,19 @@
             btnRoll.Enabled = False
             btnScore.PerformClick()
         End If
-
-        'This comment can be removed at a later time, was here for debug testing before images were applied
-        'MsgBox("Dice rolls are as follows 1-5: " & " " & CStr(btnRollDie1.Tag) & ", " & CStr(btnRollDie2.Tag) & ", " & CStr(btnRollDie3.Tag) & ", " & CStr(btnRollDie4.Tag) & ", " & CStr(btnRollDie5.Tag))
     End Sub
 
+    '----------------
     '10 HANDLERS TO CONTROL KEEP/ROLL STATE OF DICE BUTTONS
+    '----------------
+
+    '-------------------------------------------------------------------------------------------------
+    'Subroutine: btnRollDie1_Click
+    'Author: Ian Morse, Patrick Reynolds
+    'Date: December 07, 2020
+    'Description: Clones the tag applied to the button to the associated kept die and sets the dice face on the Kept die. 
+    '             Will then swap visibility of Roll vs Keep
+    '-------------------------------------------------------------------------------------------------
     'Button Handler to keep First die
     Private Sub btnRollDie1_Click(sender As Object, e As EventArgs) Handles btnRollDie1.Click
         'clones the tag from the roll on to the keep button and sets the die face
@@ -353,6 +398,13 @@
         End If
     End Sub
 
+    '-------------------------------------------------------------------------------------------------
+    'Subroutine: btnRollDie2_Click
+    'Author: Ian Morse, Patrick Reynolds
+    'Date: December 07, 2020
+    'Description: Clones the tag applied to the button to the associated kept die and sets the dice face on the Kept die. 
+    '             Will then swap visibility of Roll vs Keep
+    '-------------------------------------------------------------------------------------------------
     Private Sub btnRollDie2_Click(sender As Object, e As EventArgs) Handles btnRollDie2.Click
         'Button Handler to keep Second die
         If intRollNum <> 0 Then
@@ -363,6 +415,13 @@
         End If
     End Sub
 
+    '-------------------------------------------------------------------------------------------------
+    'Subroutine: btnRollDie3_Click
+    'Author: Ian Morse, Patrick Reynolds
+    'Date: December 07, 2020
+    'Description: Clones the tag applied to the button to the associated kept die and sets the dice face on the Kept die. 
+    '             Will then swap visibility of Roll vs Keep
+    '-------------------------------------------------------------------------------------------------
     Private Sub btnRollDie3_Click(sender As Object, e As EventArgs) Handles btnRollDie3.Click
         'Button Handler to keep Third die
         If intRollNum <> 0 Then
@@ -373,6 +432,13 @@
         End If
     End Sub
 
+    '-------------------------------------------------------------------------------------------------
+    'Subroutine: btnRollDie4_Click
+    'Author: Ian Morse, Patrick Reynolds
+    'Date: December 07, 2020
+    'Description: Clones the tag applied to the button to the associated kept die and sets the dice face on the Kept die. 
+    '             Will then swap visibility of Roll vs Keep
+    '-------------------------------------------------------------------------------------------------
     Private Sub btnRollDie4_Click(sender As Object, e As EventArgs) Handles btnRollDie4.Click
         'Button Handler to keep Fourth die
         If intRollNum <> 0 Then
@@ -383,6 +449,13 @@
         End If
     End Sub
 
+    '-------------------------------------------------------------------------------------------------
+    'Subroutine: btnRollDie5_Click
+    'Author: Ian Morse, Patrick Reynolds
+    'Date: December 07, 2020
+    'Description: Clones the tag applied to the button to the associated kept die and sets the dice face on the Kept die. 
+    '             Will then swap visibility of Roll vs Keep
+    '-------------------------------------------------------------------------------------------------
     Private Sub btnRollDie5_Click(sender As Object, e As EventArgs) Handles btnRollDie5.Click
         If intRollNum <> 0 Then
             'Button Handler to keep Fifth die
@@ -393,30 +466,60 @@
         End If
     End Sub
 
+    '-------------------------------------------------------------------------------------------------
+    'Subroutine: btnKeepDie1_Click
+    'Author: Patrick Reynolds
+    'Date: December 04, 2020
+    'Description: Changes visibility of the selected kept die and makes the corresponding roll die number visible. 
+    '-------------------------------------------------------------------------------------------------
     Private Sub btnKeepDie1_Click(sender As Object, e As EventArgs) Handles btnKeepDie1.Click
         'Button Handler to roll First die
         btnKeepDie1.Visible = False
         btnRollDie1.Visible = True
     End Sub
 
+    '-------------------------------------------------------------------------------------------------
+    'Subroutine: btnKeepDie2_Click
+    'Author: Patrick Reynolds
+    'Date: December 04, 2020
+    'Description: Changes visibility of the selected kept die and makes the corresponding roll die number visible. 
+    '-------------------------------------------------------------------------------------------------
     Private Sub btnKeepDie2_Click(sender As Object, e As EventArgs) Handles btnKeepDie2.Click
         'Button Handler to roll Second die
         btnKeepDie2.Visible = False
         btnRollDie2.Visible = True
     End Sub
 
+    '-------------------------------------------------------------------------------------------------
+    'Subroutine: btnKeepDie3_Click
+    'Author: Patrick Reynolds
+    'Date: December 04, 2020
+    'Description: Changes visibility of the selected kept die and makes the corresponding roll die number visible. 
+    '-------------------------------------------------------------------------------------------------
     Private Sub btnKeepDie3_Click(sender As Object, e As EventArgs) Handles btnKeepDie3.Click
         'Button Handler to roll Third die
         btnKeepDie3.Visible = False
         btnRollDie3.Visible = True
     End Sub
 
+    '-------------------------------------------------------------------------------------------------
+    'Subroutine: btnKeepDie4_Click
+    'Author: Patrick Reynolds
+    'Date: December 04, 2020
+    'Description: Changes visibility of the selected kept die and makes the corresponding roll die number visible. 
+    '-------------------------------------------------------------------------------------------------
     Private Sub btnKeepDie4_Click(sender As Object, e As EventArgs) Handles btnKeepDie4.Click
         'Button Handler to roll Fourth die
         btnKeepDie4.Visible = False
         btnRollDie4.Visible = True
     End Sub
 
+    '-------------------------------------------------------------------------------------------------
+    'Subroutine: btnKeepDie5_Click
+    'Author: Patrick Reynolds
+    'Date: December 04, 2020
+    'Description: Changes visibility of the selected kept die and makes the corresponding roll die number visible. 
+    '-------------------------------------------------------------------------------------------------
     Private Sub btnKeepDie5_Click(sender As Object, e As EventArgs) Handles btnKeepDie5.Click
         'Button Handler to roll Fifth die
         btnKeepDie5.Visible = False
@@ -427,8 +530,13 @@
     'SUBROUTINES/FUNCTIONS
     '----------------------
 
-    'Subroutine for setting the dice face image to the associated button from the above roll logic
-    'This does not yet account for held dice row of buttons above
+
+    '-------------------------------------------------------------------------------------------------
+    'Subroutine: DiceFace
+    'Author: Patrick Reynolds
+    'Date: December 06, 2020
+    'Description: Sets the dice face image to the associated button from the above roll logic
+    '-------------------------------------------------------------------------------------------------
     Private Sub DiceFace(objButton)
         If objButton.Tag = "1" Then
             objButton.BackgroundImage = Image.FromFile("..\Images\Die_Roll_1.png")
