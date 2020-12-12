@@ -19,7 +19,7 @@ Public Class yahtzee
     '-------------------------------------------------------------------------------------------------
     'Subroutine: yahtzee_Load
     'Author: Ian Morse
-    'Date: December 11, 2020
+    'Date: December 06, 2020
     'Description: On load event to set the headers in the listbox for scoring 
     '-------------------------------------------------------------------------------------------------
     Private Sub yahtzee_Load(sender As Object, e As EventArgs) Handles Me.Load
@@ -49,7 +49,7 @@ Public Class yahtzee
     '-------------------------------------------------------------------------------------------------
     'Subroutine: btnScore_Click
     'Author: Patrick Reynolds
-    'Date: December 11, 2020
+    'Date: December 07, 2020
     'Description: Makes the scoring groupbox visible
     '-------------------------------------------------------------------------------------------------
     Private Sub btnScore_Click(sender As Object, e As EventArgs) Handles btnScore.Click
@@ -59,7 +59,7 @@ Public Class yahtzee
     '-------------------------------------------------------------------------------------------------
     'Subroutine: btnMarkScore_Click
     'Author: Patrick Reynolds, Ian Morse
-    'Date: December 11, 2020
+    'Date: December 10, 2020
     'Description: Button handler For submitting the player selected score Option For scoring
     '             and applies that score to the listbox
     '-------------------------------------------------------------------------------------------------
