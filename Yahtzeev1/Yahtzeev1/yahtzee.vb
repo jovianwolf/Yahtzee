@@ -592,6 +592,12 @@ Public Class yahtzee
         End If
     End Sub
 
+    '-------------------------------------------------------------------------------------------------
+    'Function: RandomizeDice
+    'Author: Patrick Reynolds
+    'Date: December 04, 2020
+    'Description: Chooses a random number within bounds of a 6 headed dice - returns the random number
+    '-------------------------------------------------------------------------------------------------
     Private Function RandomizeDice(intDie) As Integer
         Dim intDieChoice As Integer
 
@@ -601,6 +607,13 @@ Public Class yahtzee
         Return intDieChoice
     End Function
 
+    '-------------------------------------------------------------------------------------------------
+    'Subroutine: delay
+    'Author: Ian Morse
+    'Date: December 04, 2020
+    'Description: Counts to a high number to ensure that the millisecond time seed used for 
+    '             random number is more random on higher end / quicker computers.
+    '-------------------------------------------------------------------------------------------------
     Private Sub delay()
         Dim count As Integer = 1
         For count = 1 To 10000000
@@ -608,8 +621,13 @@ Public Class yahtzee
         Next
     End Sub
 
-    'Subroutine to score ones - sixes
-    'can feed any number, will hunt for that number in the given array and will score accordingly
+    '-------------------------------------------------------------------------------------------------
+    'Function: ScoreSameFace
+    'Author: Patrick Reynolds
+    'Date: December 09, 2020
+    'Description: Subroutine to score Ones – Sixes; Feed the array of dice numbers as well as a number  
+    '             into the function to search for number of occurrences of that number - returns occurrence count
+    '-------------------------------------------------------------------------------------------------
     Private Function ScoreSameFace(intDiceArray() As Integer, intNumberToFind As Integer) As Integer
         Dim intOccurrences As Integer
 
@@ -627,7 +645,13 @@ Public Class yahtzee
 
     End Function
 
-    'Subroutine called when Large Straight is marked for scoring
+    '-------------------------------------------------------------------------------------------------
+    'Subroutine: ScoreLargeStraight
+    'Author: Patrick Reynolds
+    'Date: December 08, 2020
+    'Description: |Not implemented|
+    '             Not fully implemented and is not working with current logic
+    '-------------------------------------------------------------------------------------------------
     Private Sub ScoreLargeStraight(intDiceArray)
 
         Dim blnPositiveStraight As Boolean
@@ -647,10 +671,7 @@ Public Class yahtzee
 
             Else blnPositiveStraight = False
             End If
-
-
         Next
-
 
         If blnPositiveStraight Or blnNegativeStraight = True Then
             lstScores.Items(13) = "L Straight" & ControlChars.Tab & ControlChars.Tab & "40"
@@ -662,7 +683,13 @@ Public Class yahtzee
         rdbLgStraight.Visible = False
     End Sub
 
-    'Subroutine called when Yahtzee is marked and needs to validate for scoring
+    '-------------------------------------------------------------------------------------------------
+    'Subroutine: ScoreYahtzee
+    'Author: Patrick Reynolds
+    'Date: December 07, 2020
+    'Description: Will check for yahtzee score condition from current array of dice values and apply
+    '             score to listbox (needs a rewrite for fixing end game scoring later but out of time)
+    '-------------------------------------------------------------------------------------------------
     Private Sub ScoreYahtzee(intDiceArray)
         'boolean used in test loop to validate if all die are the same
         Dim blnValidYahtzee As Boolean
@@ -691,18 +718,22 @@ Public Class yahtzee
         rdbYahtzee.Visible = False
     End Sub
 
-    'Subroutine called when Chance is marked for scoring
+    '-------------------------------------------------------------------------------------------------
+    'Subroutine: ScoreChance
+    'Author: Patrick Reynolds
+    'Date: December 08, 2020
+    'Description: Will check all dice values and add together then apply that score to listbox 
+    '             (needs a rewrite for fixing end game scoring later but out of time)
+    '-------------------------------------------------------------------------------------------------
     Private Sub ScoreChance(intDiceArray)
         'To store the total of all die faces added up for chance
         Dim intTotal As Integer
-
 
         'this steps through the array and keeps a running total to add to chance score
         For intX = 0 To intDiceArray.Length - 1
 
             intTotal += intDiceArray(intX)
         Next
-
         lstScores.Items(14) = "Chance" & ControlChars.Tab & ControlChars.Tab & CStr(intTotal)
 
         'Setting the radio button to invisible so player can only play 1x
