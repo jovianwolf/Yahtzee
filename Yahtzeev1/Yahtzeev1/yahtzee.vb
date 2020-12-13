@@ -662,26 +662,25 @@ Public Class yahtzee
     '-------------------------------------------------------------------------------------------------
     Private Sub ScoreLargeStraight(intDiceArray)
 
-        Dim blnPositiveStraight As Boolean
-        Dim blnNegativeStraight As Boolean
+        Dim blnLgStraight As Boolean
 
-        'this is WIP and is not yet functional
-        'used -2 to prevent overload of comparison of next object in array out of array bounds
-        For intX = 0 To intDiceArray.Length - 2
-            If intDiceArray(intX) > intDiceArray(intX + 1) Then
-                blnNegativeStraight = True
+        'Sorted the array to measure previous value to next value to evaluate straight
+        Array.Sort(intDiceArray)
 
-            Else blnNegativeStraight = False
-            End If
+        If intDiceArray(0) > intDiceArray(1) And
+           intDiceArray(1) > intDiceArray(2) And
+           intDiceArray(2) > intDiceArray(3) And
+           intDiceArray(3) > intDiceArray(4) Then
 
-            If intDiceArray(intX) < intDiceArray(intX + 1) Then
-                blnPositiveStraight = True
+            blnLgStraight = True
 
-            Else blnPositiveStraight = False
-            End If
-        Next
+        Else
+            blnLgStraight = False
 
-        If blnPositiveStraight Or blnNegativeStraight = True Then
+        End If
+
+
+        If blnLgStraight = True Then
             lstScores.Items(13) = "L Straight" & ControlChars.Tab & ControlChars.Tab & "40"
         Else
             lstScores.Items(13) = "L Straight" & ControlChars.Tab & ControlChars.Tab & "0"
