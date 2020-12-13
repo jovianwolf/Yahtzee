@@ -146,6 +146,19 @@ Public Class yahtzee
         btnRoll.Enabled = True
         'Hide score group
         GbxScore.Visible = False
+        'Set roll number back to 0
+        intRollNum = 0
+        'Disable buttons until after first roll
+        btnRollDie1.Enabled = False
+        btnRollDie2.Enabled = False
+        btnRollDie3.Enabled = False
+        btnRollDie4.Enabled = False
+        btnRollDie5.Enabled = False
+        btnKeepDie1.Enabled = False
+        btnKeepDie2.Enabled = False
+        btnKeepDie3.Enabled = False
+        btnKeepDie4.Enabled = False
+        btnKeepDie5.Enabled = False
     End Sub
 
     '-------------------------------------------------------------------------------------------------
@@ -374,6 +387,21 @@ Public Class yahtzee
             btnRoll.Enabled = False
             btnScore.PerformClick()
         End If
+
+        'Re-enable all buttons (after they were disabled by mark score button)
+        If intRollNum = 1 Then
+            btnRollDie1.Enabled = True
+            btnRollDie2.Enabled = True
+            btnRollDie3.Enabled = True
+            btnRollDie4.Enabled = True
+            btnRollDie5.Enabled = True
+            btnKeepDie1.Enabled = True
+            btnKeepDie2.Enabled = True
+            btnKeepDie3.Enabled = True
+            btnKeepDie4.Enabled = True
+            btnKeepDie5.Enabled = True
+        End If
+
     End Sub
 
     '----------------
