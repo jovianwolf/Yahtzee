@@ -667,10 +667,10 @@ Public Class yahtzee
         'Sorted the array to measure previous value to next value to evaluate straight
         Array.Sort(intDiceArray)
 
-        If intDiceArray(0) > intDiceArray(1) And
-           intDiceArray(1) > intDiceArray(2) And
-           intDiceArray(2) > intDiceArray(3) And
-           intDiceArray(3) > intDiceArray(4) Then
+        If intDiceArray(0) < intDiceArray(1) And
+           intDiceArray(1) < intDiceArray(2) And
+           intDiceArray(2) < intDiceArray(3) And
+           intDiceArray(3) < intDiceArray(4) Then
 
             blnLgStraight = True
 
