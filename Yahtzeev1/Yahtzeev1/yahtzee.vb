@@ -79,13 +79,20 @@ Public Class yahtzee
             Call ScoreYahtzee(DiceToScore)
 
         ElseIf rdbChance.Checked And rdbChance.Visible = True Then
-            Call ScoreChance(DiceToScore)
+            intTotal = AddFaces(DiceToScore)
+            lstScores.Items(14) = "Chance" & ControlChars.Tab & ControlChars.Tab & CStr(intTotal)
+            rdbChance.Visible = False
 
         ElseIf rdbLgStraight.Checked And rdbLgStraight.Visible = True Then
             Call ScoreLargeStraight(DiceToScore)
 
+        ElseIf rdb4OfKind.Checked And rdb4OfKind.Visible = True Then
+            Call Score4OfKind(DiceToScore)
+            rdb4OfKind.Visible = False
+
         ElseIf rdb3OfKind.Checked And rdb3OfKind.Visible = True Then
             Call Score3OfKind(DiceToScore)
+            rdb3OfKind.Visible = False
 
         ElseIf rdbSixes.Checked And rdbSixes.Visible = True Then
             intTotal = (ScoreSameFace(DiceToScore, 6) * 6)
@@ -660,8 +667,7 @@ Public Class yahtzee
     'Subroutine: Score3OfKind
     'Author: Patrick Reynolds
     'Date: December 13, 2020
-    'Description: |Not implemented|
-    '             Not fully implemented and is not working with current logic
+    'Description: Will check the array for at least 3 occurrences of any valid number and score 25 points if true.
     '-------------------------------------------------------------------------------------------------
 
     Private Sub Score3OfKind(intDiceArray)
@@ -696,6 +702,48 @@ Public Class yahtzee
         End If
 
     End Sub
+
+    '-------------------------------------------------------------------------------------------------
+    'Subroutine: Score4OfKind
+    'Author: Patrick Reynolds
+    'Date: December 13, 2020
+    'Description: Will check the array for at least 3 occurrences of any valid number and score 25 points if true.
+    '-------------------------------------------------------------------------------------------------
+
+    Private Sub Score4OfKind(intDiceArray)
+        Dim bln4OfKind As Boolean = False
+
+        For IntX = 1 To intDiceArray.Length
+            If ScoreSameFace(intDiceArray, 1) >= 4 Then
+                bln4OfKind = True
+
+            ElseIf ScoreSameFace(intDiceArray, 2) >= 4 Then
+                bln4OfKind = True
+
+            ElseIf ScoreSameFace(intDiceArray, 3) >= 4 Then
+                bln4OfKind = True
+
+            ElseIf ScoreSameFace(intDiceArray, 4) >= 4 Then
+                bln4OfKind = True
+
+            ElseIf ScoreSameFace(intDiceArray, 5) >= 4 Then
+                bln4OfKind = True
+
+            End If
+
+        Next
+
+        If bln4OfKind = True Then
+
+            lstScores.Items(10) = "4-Kind" & ControlChars.Tab & ControlChars.Tab & "25"
+
+        Else
+            lstScores.Items(10) = "4-Kind" & ControlChars.Tab & ControlChars.Tab & "0"
+
+        End If
+
+    End Sub
+
 
     '-------------------------------------------------------------------------------------------------
     'Subroutine: ScoreLargeStraight
@@ -770,24 +818,23 @@ Public Class yahtzee
     End Sub
 
     '-------------------------------------------------------------------------------------------------
-    'Subroutine: ScoreChance
+    'Subroutine: AddFaces
     'Author: Patrick Reynolds
     'Date: December 08, 2020
     'Description: Will check all dice values and add together then apply that score to listbox 
     '             (needs a rewrite for fixing end game scoring later but out of time)
     '-------------------------------------------------------------------------------------------------
-    Private Sub ScoreChance(intDiceArray)
-        'To store the total of all die faces added up for chance
+    Private Function AddFaces(intDiceArray) As Integer
+        'To store the total of all die faces added up
         Dim intTotal As Integer
 
-        'this steps through the array and keeps a running total to add to chance score
+        'this steps through the array and keeps a running total
         For intX = 0 To intDiceArray.Length - 1
 
             intTotal += intDiceArray(intX)
         Next
-        lstScores.Items(14) = "Chance" & ControlChars.Tab & ControlChars.Tab & CStr(intTotal)
 
-        'Setting the radio button to invisible so player can only play 1x
-        rdbChance.Visible = False
-    End Sub
+        Return intTotal
+
+    End Function
 End Class
