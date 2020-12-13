@@ -16,6 +16,8 @@ Public Class yahtzee
     Dim blnRollDie4 As Boolean
     Dim blnRollDie5 As Boolean
 
+
+
     '-------------------------------------------------------------------------------------------------
     'Subroutine: yahtzee_Load
     'Author: Ian Morse
@@ -40,6 +42,8 @@ Public Class yahtzee
         lstScores.Items.Add("Chance")
         lstScores.Items.Add("YAHTZEE")
         lstScores.Items.Add("TOTAL")
+        'Disabling "score" button on start so that user can't score after 0 rolls
+        btnScore.Enabled = False
     End Sub
 
     '----------------
@@ -159,6 +163,8 @@ Public Class yahtzee
         btnKeepDie3.Enabled = False
         btnKeepDie4.Enabled = False
         btnKeepDie5.Enabled = False
+        'Disable "score" button until after first roll
+        btnScore.Enabled = False
     End Sub
 
     '-------------------------------------------------------------------------------------------------
@@ -400,6 +406,8 @@ Public Class yahtzee
             btnKeepDie3.Enabled = True
             btnKeepDie4.Enabled = True
             btnKeepDie5.Enabled = True
+            're-enable score button
+            btnScore.Enabled = True
         End If
 
     End Sub
