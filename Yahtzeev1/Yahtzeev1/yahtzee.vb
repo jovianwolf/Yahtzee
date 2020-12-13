@@ -84,6 +84,9 @@ Public Class yahtzee
         ElseIf rdbLgStraight.Checked And rdbLgStraight.Visible = True Then
             Call ScoreLargeStraight(DiceToScore)
 
+        ElseIf rdb3OfKind.Checked And rdb3OfKind.Visible = True Then
+            Call Score3OfKind(DiceToScore)
+
         ElseIf rdbSixes.Checked And rdbSixes.Visible = True Then
             intTotal = (ScoreSameFace(DiceToScore, 6) * 6)
 
@@ -654,9 +657,50 @@ Public Class yahtzee
     End Function
 
     '-------------------------------------------------------------------------------------------------
+    'Subroutine: Score3OfKind
+    'Author: Patrick Reynolds
+    'Date: December 13, 2020
+    'Description: |Not implemented|
+    '             Not fully implemented and is not working with current logic
+    '-------------------------------------------------------------------------------------------------
+
+    Private Sub Score3OfKind(intDiceArray)
+        Dim bln3OfKind As Boolean = False
+
+        For IntX = 1 To intDiceArray.Length
+            If ScoreSameFace(intDiceArray, 1) >= 3 Then
+                bln3OfKind = True
+
+            ElseIf ScoreSameFace(intDiceArray, 2) >= 3 Then
+                bln3OfKind = True
+
+            ElseIf ScoreSameFace(intDiceArray, 3) >= 3 Then
+                bln3OfKind = True
+
+            ElseIf ScoreSameFace(intDiceArray, 4) >= 3 Then
+                bln3OfKind = True
+
+            ElseIf ScoreSameFace(intDiceArray, 5) >= 3 Then
+                bln3OfKind = True
+
+            End If
+
+        Next
+
+        If bln3OfKind = True Then
+            lstScores.Items(9) = "3-Kind" & ControlChars.Tab & ControlChars.Tab & "25"
+
+        Else
+            lstScores.Items(9) = "3-Kind" & ControlChars.Tab & ControlChars.Tab & "0"
+
+        End If
+
+    End Sub
+
+    '-------------------------------------------------------------------------------------------------
     'Subroutine: ScoreLargeStraight
     'Author: Patrick Reynolds
-    'Date: December 08, 2020
+    'Date: December 13, 2020
     'Description: |Not implemented|
     '             Not fully implemented and is not working with current logic
     '-------------------------------------------------------------------------------------------------
