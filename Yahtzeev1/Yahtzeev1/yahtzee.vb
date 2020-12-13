@@ -694,7 +694,7 @@ Public Class yahtzee
         Next
 
         If bln3OfKind = True Then
-            lstScores.Items(9) = "3-Kind" & ControlChars.Tab & ControlChars.Tab & "25"
+            lstScores.Items(9) = "3-Kind" & ControlChars.Tab & ControlChars.Tab & CStr(AddFaces(intDiceArray))
 
         Else
             lstScores.Items(9) = "3-Kind" & ControlChars.Tab & ControlChars.Tab & "0"
@@ -735,7 +735,7 @@ Public Class yahtzee
 
         If bln4OfKind = True Then
 
-            lstScores.Items(10) = "4-Kind" & ControlChars.Tab & ControlChars.Tab & "25"
+            lstScores.Items(10) = "4-Kind" & ControlChars.Tab & ControlChars.Tab & CStr(AddFaces(intDiceArray))
 
         Else
             lstScores.Items(10) = "4-Kind" & ControlChars.Tab & ControlChars.Tab & "0"
