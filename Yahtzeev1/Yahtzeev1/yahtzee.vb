@@ -762,13 +762,15 @@ Public Class yahtzee
         Dim bln3OfKind As Boolean = False
         Dim bln2OfKind As Boolean = False
 
-        For IntX = 1 To intDiceArray.Length
-            If ScoreSameFace(intDiceArray, IntX) >= 3 Then
-                bln3OfKind = True
-                If ScoreSameFace(intDiceArray, IntX) >= 2 Then
-                    bln2OfKind = True
-                End If
+        For IntX = 1 To intDiceArray.Length + 1
+            If ScoreSameFace(intDiceArray, IntX) = 3 Then
 
+                bln3OfKind = True
+            End If
+
+            If ScoreSameFace(intDiceArray, IntX) = 2 Then
+
+                bln2OfKind = True
             End If
 
         Next
