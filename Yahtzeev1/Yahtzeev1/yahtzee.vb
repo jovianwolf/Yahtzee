@@ -49,6 +49,63 @@ Public Class yahtzee
     '----------------
     'BUTTON HANDLERS
     '----------------
+    '-------------------------------------------------------------------------------------------------
+    'Subroutine: btnReset_Click
+    'Author: Patrick Reynolds
+    'Date: December 13, 2020
+    'Description: Resets the game to play again
+    '-------------------------------------------------------------------------------------------------
+    Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
+        'Resets the scoreboard to start position
+        lstScores.Items.Add("SCORES")
+        lstScores.Items.Add("Ones")
+        lstScores.Items.Add("Twos")
+        lstScores.Items.Add("Threes")
+        lstScores.Items.Add("Fours")
+        lstScores.Items.Add("Fives")
+        lstScores.Items.Add("Sixes")
+        lstScores.Items.Add("Sum")
+        lstScores.Items.Add("Bonus")
+        lstScores.Items.Add("3-kind")
+        lstScores.Items.Add("4-kind")
+        lstScores.Items.Add("House")
+        lstScores.Items.Add("S Straight")
+        lstScores.Items.Add("L Straight")
+        lstScores.Items.Add("Chance")
+        lstScores.Items.Add("YAHTZEE")
+        lstScores.Items.Add("TOTAL")
+
+        'Sets the radio buttons visible again for scoring next game
+        rdbOnes.Visible = True
+        rdbTwos.Visible = True
+        rdbThrees.Visible = True
+        rdbFours.Visible = True
+        rdbFives.Visible = True
+        rdbSixes.Visible = True
+        rdb3OfKind.Visible = True
+        rdb4OfKind.Visible = True
+        rdbFullHouse.Visible = True
+        rdbSmStraight.Visible = True
+        rdbLgStraight.Visible = True
+        rdbChance.Visible = True
+        rdbYahtzee.Visible = True
+
+        'force held die to the roll tray
+        btnKeepDie1.Visible = False
+        btnKeepDie2.Visible = False
+        btnKeepDie3.Visible = False
+        btnKeepDie4.Visible = False
+        btnKeepDie5.Visible = False
+
+        btnRollDie1.Visible = True
+        btnRollDie2.Visible = True
+        btnRollDie3.Visible = True
+        btnRollDie4.Visible = True
+        btnRollDie5.Visible = True
+
+        'Disabling "score" button on start so that user can't score after 0 rolls
+        btnScore.Enabled = False
+    End Sub
 
     '-------------------------------------------------------------------------------------------------
     'Subroutine: btnScore_Click
@@ -163,6 +220,19 @@ Public Class yahtzee
             rdbOnes.Visible = False
 
         End If
+
+        'force held die to the roll tray
+        btnKeepDie1.Visible = False
+        btnKeepDie2.Visible = False
+        btnKeepDie3.Visible = False
+        btnKeepDie4.Visible = False
+        btnKeepDie5.Visible = False
+
+        btnRollDie1.Visible = True
+        btnRollDie2.Visible = True
+        btnRollDie3.Visible = True
+        btnRollDie4.Visible = True
+        btnRollDie5.Visible = True
 
         'Re-enable roll button (has been disabled in btnRoll_Click if 3rd roll)
         btnRoll.Enabled = True
@@ -930,4 +1000,5 @@ Public Class yahtzee
         Return intTotal
 
     End Function
+
 End Class
