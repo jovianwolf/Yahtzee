@@ -83,6 +83,10 @@ Public Class yahtzee
             lstScores.Items(14) = "Chance" & ControlChars.Tab & ControlChars.Tab & CStr(intTotal)
             rdbChance.Visible = False
 
+        ElseIf rdbSmStraight.Checked And rdbSmStraight.Visible = True Then
+            Call ScoreSmallStraight(DiceToScore)
+            rdbSmStraight.Visible = False
+
         ElseIf rdbLgStraight.Checked And rdbLgStraight.Visible = True Then
             Call ScoreLargeStraight(DiceToScore)
 
@@ -744,13 +748,60 @@ Public Class yahtzee
 
     End Sub
 
+    '-------------------------------------------------------------------------------------------------
+    'Subroutine: ScoreSmallStraight
+    'Author: Patrick Reynolds
+    'Date: December 13, 2020
+    'Description: Looks for a sequence of 4 numbers in order and scores the game accordingly
+    '-------------------------------------------------------------------------------------------------
+    Private Sub ScoreSmallStraight(intDiceArray)
+
+        Dim blnSmStraight As Boolean
+
+        'Sorted the array to measure previous value to next value to evaluate straight
+        Array.Sort(intDiceArray)
+
+        If intDiceArray(0) < intDiceArray(1) And
+           intDiceArray(0) = (intDiceArray(1) - 1) And
+           intDiceArray(1) < intDiceArray(2) And
+           intDiceArray(1) = (intDiceArray(2) - 1) And
+           intDiceArray(2) < intDiceArray(3) And
+           intDiceArray(2) = (intDiceArray(3) - 1) Then
+
+            blnSmStraight = True
+
+        Else
+            If intDiceArray(1) < intDiceArray(2) And
+               intDiceArray(1) = (intDiceArray(2) - 1) And
+               intDiceArray(2) < intDiceArray(3) And
+               intDiceArray(2) = (intDiceArray(3) - 1) And
+               intDiceArray(3) < intDiceArray(4) And
+               intDiceArray(3) = (intDiceArray(4) - 1) Then
+
+                blnSmStraight = True
+
+            Else
+                blnSmStraight = False
+
+            End If
+        End If
+
+
+        If blnSmStraight = True Then
+            lstScores.Items(12) = "S Straight" & ControlChars.Tab & ControlChars.Tab & "30"
+        Else
+            lstScores.Items(12) = "S Straight" & ControlChars.Tab & ControlChars.Tab & "0"
+        End If
+
+        'Setting the radio button to invisible so player can only play 1x
+        rdbLgStraight.Visible = False
+    End Sub
 
     '-------------------------------------------------------------------------------------------------
     'Subroutine: ScoreLargeStraight
     'Author: Patrick Reynolds
     'Date: December 13, 2020
-    'Description: |Not implemented|
-    '             Not fully implemented and is not working with current logic
+    'Description: Looks for a sequence of 5 numbers in order and scores the game accordingly
     '-------------------------------------------------------------------------------------------------
     Private Sub ScoreLargeStraight(intDiceArray)
 
@@ -760,9 +811,13 @@ Public Class yahtzee
         Array.Sort(intDiceArray)
 
         If intDiceArray(0) < intDiceArray(1) And
+           intDiceArray(0) = (intDiceArray(1) - 1) And
            intDiceArray(1) < intDiceArray(2) And
+           intDiceArray(1) = (intDiceArray(2) - 1) And
            intDiceArray(2) < intDiceArray(3) And
-           intDiceArray(3) < intDiceArray(4) Then
+           intDiceArray(2) = (intDiceArray(3) - 1) And
+           intDiceArray(3) < intDiceArray(4) And
+           intDiceArray(3) = (intDiceArray(4) - 1) Then
 
             blnLgStraight = True
 
