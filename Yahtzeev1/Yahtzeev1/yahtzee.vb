@@ -103,6 +103,9 @@ Public Class yahtzee
 
         'Disabling "score" button on start so that user can't score after 0 rolls
         btnScore.Enabled = False
+
+        'Sets turn number to 0
+        intRollNum = 0
     End Sub
 
     '-------------------------------------------------------------------------------------------------
