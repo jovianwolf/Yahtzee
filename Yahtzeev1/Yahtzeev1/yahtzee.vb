@@ -133,7 +133,7 @@ Public Class yahtzee
            rdbChance.Visible = False Then
 
             'initiate scoring and gather values from each index of the listbox
-            lstScores.Items(16) = "TOTAL " & ControlChars.Tab & " about tree fiddy"
+            lstScores.Items(16) = "TOTAL " & ControlChars.Tab & lstScores.Items(15)
 
         End If
 
@@ -1025,5 +1025,28 @@ Public Class yahtzee
         Return intTotal
 
     End Function
+
+    Private Function ConvertListItemToScore(strListEntry As String) As Integer
+        Dim PointValue As Integer
+        Dim strScore As String = ""
+        Dim charArray() As Char = strListEntry.ToCharArray()
+
+        If strListEntry = Nothing Then
+            Return 0
+        End If
+
+        For Each C As Char In charArray
+            If Char.IsDigit(C) Then
+                strScore &= C
+            End If
+        Next
+
+        If IsNumeric(strScore) Then
+            PointValue = CInt(strScore)
+        End If
+
+        Return PointValue
+    End Function
+
 
 End Class
