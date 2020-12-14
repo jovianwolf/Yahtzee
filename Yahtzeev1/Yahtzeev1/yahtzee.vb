@@ -83,6 +83,10 @@ Public Class yahtzee
             lstScores.Items(14) = "Chance" & ControlChars.Tab & ControlChars.Tab & CStr(intTotal)
             rdbChance.Visible = False
 
+        ElseIf rdbFullHouse.Checked And rdbFullHouse.Visible = True Then
+            Call ScoreFullHouse(DiceToScore)
+            rdbFullHouse.Visible = False
+
         ElseIf rdbSmStraight.Checked And rdbSmStraight.Visible = True Then
             Call ScoreSmallStraight(DiceToScore)
             rdbSmStraight.Visible = False
@@ -747,6 +751,38 @@ Public Class yahtzee
         End If
 
     End Sub
+
+    '-------------------------------------------------------------------------------------------------
+    'Subroutine: ScoreFullHouse
+    'Author: Patrick Reynolds
+    'Date: December 13, 2020
+    'Description: Looks for a sequence of 3 and a sequence of 2 within the array of 5 integers and scores accordingly
+    '-------------------------------------------------------------------------------------------------
+    Private Sub ScoreFullHouse(intDiceArray)
+        Dim bln3OfKind As Boolean = False
+        Dim bln2OfKind As Boolean = False
+
+        For IntX = 1 To intDiceArray.Length
+            If ScoreSameFace(intDiceArray, IntX) >= 3 Then
+                bln3OfKind = True
+                If ScoreSameFace(intDiceArray, IntX) >= 2 Then
+                    bln2OfKind = True
+                End If
+
+            End If
+
+        Next
+
+        If bln3OfKind = True And bln2OfKind = True Then
+            lstScores.Items(11) = "House" & ControlChars.Tab & ControlChars.Tab & "25"
+
+        Else
+            lstScores.Items(11) = "House" & ControlChars.Tab & ControlChars.Tab & "0"
+
+        End If
+
+    End Sub
+
 
     '-------------------------------------------------------------------------------------------------
     'Subroutine: ScoreSmallStraight
