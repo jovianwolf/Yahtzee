@@ -16,8 +16,6 @@ Public Class yahtzee
     Dim blnRollDie4 As Boolean
     Dim blnRollDie5 As Boolean
 
-
-
     '-------------------------------------------------------------------------------------------------
     'Subroutine: yahtzee_Load
     'Author: Ian Morse
@@ -115,6 +113,27 @@ Public Class yahtzee
     '-------------------------------------------------------------------------------------------------
     Private Sub btnScore_Click(sender As Object, e As EventArgs) Handles btnScore.Click
         GbxScore.Visible = True
+
+        'for tallying up the final score
+        If rdbOnes.Visible = False And
+           rdbTwos.Visible = False And
+           rdbThrees.Visible = False And
+           rdbFours.Visible = False And
+           rdbFives.Visible = False And
+           rdbSixes.Visible = False And
+           rdb3OfKind.Visible = False And
+           rdb4OfKind.Visible = False And
+           rdbFullHouse.Visible = False And
+           rdbSmStraight.Visible = False And
+           rdbLgStraight.Visible = False And
+           rdbYahtzee.Visible = False And
+           rdbChance.Visible = False Then
+
+            'initiate scoring and gather values from each index of the listbox
+            lstScores.Items(16) = "TOTAL " & ControlChars.Tab & " about tree fiddy"
+
+        End If
+
     End Sub
 
     '-------------------------------------------------------------------------------------------------
@@ -253,6 +272,9 @@ Public Class yahtzee
         btnKeepDie5.Enabled = False
         'Disable "score" button until after first roll
         btnScore.Enabled = False
+
+
+
     End Sub
 
     '-------------------------------------------------------------------------------------------------
