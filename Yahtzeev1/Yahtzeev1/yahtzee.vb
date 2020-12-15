@@ -115,6 +115,25 @@ Public Class yahtzee
     'Description: Makes the scoring groupbox visible
     '-------------------------------------------------------------------------------------------------
     Private Sub btnScore_Click(sender As Object, e As EventArgs) Handles btnScore.Click
+        'Declaring variables to hold the integer values for scoring both at half card (ones-sixes), and end of game
+        Dim intOnes As Integer
+        Dim intTwos As Integer
+        Dim intThrees As Integer
+        Dim intFours As Integer
+        Dim intFives As Integer
+        Dim intSixes As Integer
+        Dim intSum As Integer
+
+        Dim int3kind As Integer
+        Dim int4kind As Integer
+        Dim intHouse As Integer
+        Dim intSmStraight As Integer
+        Dim intLgStraight As Integer
+        Dim intChance As Integer
+        Dim intYAHTZEE As Integer
+        Dim intTOTAL As Integer
+
+
         GbxScore.Visible = True
 
         'for tallying up the final score
@@ -132,8 +151,47 @@ Public Class yahtzee
            rdbYahtzee.Visible = False And
            rdbChance.Visible = False Then
 
-            'initiate scoring and gather values from each index of the listbox
-            lstScores.Items(16) = "TOTAL " & ControlChars.Tab & lstScores.Items(15)
+            'Gather only the numeric portion of string from the populated listbox
+            intOnes = ConvertListItemToScore(lstScores.Items(1))
+            intTwos = ConvertListItemToScore(lstScores.Items(2))
+            intThrees = ConvertListItemToScore(lstScores.Items(3))
+            intFours = ConvertListItemToScore(lstScores.Items(4))
+            intFives = ConvertListItemToScore(lstScores.Items(5))
+            intSixes = ConvertListItemToScore(lstScores.Items(6))
+            int3kind = ConvertListItemToScore(lstScores.Items(9))
+            int4kind = ConvertListItemToScore(lstScores.Items(10))
+            intHouse = ConvertListItemToScore(lstScores.Items(11))
+            intSmStraight = ConvertListItemToScore(lstScores.Items(12))
+            intLgStraight = ConvertListItemToScore(lstScores.Items(13))
+            intChance = ConvertListItemToScore(lstScores.Items(14))
+            intYAHTZEE = ConvertListItemToScore(lstScores.Items(15))
+
+            'Mathing together the whole score card for a total score
+            intTOTAL = intOnes + intTwos + intThrees + intFours + intFives + intSixes + int3kind + int4kind + intHouse + intSmStraight + intLgStraight + intYAHTZEE + intChance
+
+            'outputting total score into the total header from listbox
+            lstScores.Items(16) = "TOTAL " & ControlChars.Tab & intTOTAL
+
+            'For tallying up the first half
+        ElseIf rdbOnes.Visible = False And
+           rdbTwos.Visible = False And
+           rdbThrees.Visible = False And
+           rdbFours.Visible = False And
+           rdbFives.Visible = False And
+           rdbSixes.Visible = False Then
+
+            'Gather only the numeric portion of string from the populated listbox
+            intOnes = ConvertListItemToScore(lstScores.Items(1))
+            intTwos = ConvertListItemToScore(lstScores.Items(2))
+            intThrees = ConvertListItemToScore(lstScores.Items(3))
+            intFours = ConvertListItemToScore(lstScores.Items(4))
+            intFives = ConvertListItemToScore(lstScores.Items(5))
+            intSixes = ConvertListItemToScore(lstScores.Items(6))
+
+            'Mathing together the half card finish sum
+            intSum = intOnes + intTwos + intThrees + intFours + intFives + intSixes
+
+            lstScores.Items(7) = ("Sum" & ControlChars.Tab & intSum)
 
         End If
 
