@@ -849,6 +849,9 @@ Public Class yahtzee
             ElseIf ScoreSameFace(intDiceArray, 5) >= 3 Then
                 bln3OfKind = True
 
+            ElseIf ScoreSameFace(intDiceArray, 6) >= 4 Then
+                bln3OfKind = True
+
             End If
 
         Next
@@ -887,6 +890,9 @@ Public Class yahtzee
                 bln4OfKind = True
 
             ElseIf ScoreSameFace(intDiceArray, 5) >= 4 Then
+                bln4OfKind = True
+
+            ElseIf ScoreSameFace(intDiceArray, 6) >= 4 Then
                 bln4OfKind = True
 
             End If
