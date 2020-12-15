@@ -32,8 +32,8 @@ Public Class yahtzee
         lstScores.Items.Add("Sixes")
         lstScores.Items.Add("Sum")
         lstScores.Items.Add("Bonus")
-        lstScores.Items.Add("Three-Of-Kind")
-        lstScores.Items.Add("Four-Of-Kind")
+        lstScores.Items.Add("Three-Kind")
+        lstScores.Items.Add("Four-Kind")
         lstScores.Items.Add("House")
         lstScores.Items.Add("S Straight")
         lstScores.Items.Add("L Straight")
@@ -64,8 +64,8 @@ Public Class yahtzee
         lstScores.Items(6) = ("Sixes")
         lstScores.Items(7) = ("Sum")
         lstScores.Items(8) = ("Bonus")
-        lstScores.Items(9) = ("Three-Of-kind")
-        lstScores.Items(10) = ("Four-Of-kind")
+        lstScores.Items(9) = ("Three-Kind")
+        lstScores.Items(10) = ("Four-Kind")
         lstScores.Items(11) = ("House")
         lstScores.Items(12) = ("S Straight")
         lstScores.Items(13) = ("L Straight")
@@ -854,10 +854,10 @@ Public Class yahtzee
         Next
 
         If bln3OfKind = True Then
-            lstScores.Items(9) = "Three-Of-Kind" & ControlChars.Tab & ControlChars.Tab & CStr(AddFaces(intDiceArray))
+            lstScores.Items(9) = "Three-Kind" & ControlChars.Tab & ControlChars.Tab & CStr(AddFaces(intDiceArray))
 
         Else
-            lstScores.Items(9) = "Three-Of-Kind" & ControlChars.Tab & ControlChars.Tab & "0"
+            lstScores.Items(9) = "Three-Kind" & ControlChars.Tab & ControlChars.Tab & "0"
 
         End If
 
@@ -895,10 +895,10 @@ Public Class yahtzee
 
         If bln4OfKind = True Then
 
-            lstScores.Items(10) = "Four-Of-Kind" & ControlChars.Tab & ControlChars.Tab & CStr(AddFaces(intDiceArray))
+            lstScores.Items(10) = "Four-Kind" & ControlChars.Tab & ControlChars.Tab & CStr(AddFaces(intDiceArray))
 
         Else
-            lstScores.Items(10) = "Four-Of-Kind" & ControlChars.Tab & ControlChars.Tab & "0"
+            lstScores.Items(10) = "Four-Kind" & ControlChars.Tab & ControlChars.Tab & "0"
 
         End If
 
@@ -989,7 +989,7 @@ Public Class yahtzee
         End If
 
         'Setting the radio button to invisible so player can only play 1x
-        rdbLgStraight.Visible = False
+        rdbSmStraight.Visible = False
     End Sub
 
     '-------------------------------------------------------------------------------------------------
