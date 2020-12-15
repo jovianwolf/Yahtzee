@@ -874,7 +874,6 @@ Public Class yahtzee
     'Description: Will check the array for at least 4 occurrences of any valid number and total all dice
     ' https://www.hasbro.com/common/instruct/Yahtzee.pdf
     '-------------------------------------------------------------------------------------------------
-
     Private Sub Score4OfKind(intDiceArray)
         Dim bln4OfKind As Boolean = False
 
@@ -1074,10 +1073,10 @@ Public Class yahtzee
     End Sub
 
     '-------------------------------------------------------------------------------------------------
-    'Subroutine: AddFaces
+    'Function: AddFaces
     'Author: Patrick Reynolds
     'Date: December 08, 2020
-    'Description: Will check all dice values and add together then apply that score to listbox 
+    'Description: Will check all dice values and add together then return to caller
     '-------------------------------------------------------------------------------------------------
     Private Function AddFaces(intDiceArray) As Integer
         'To store the total of all die faces added up
