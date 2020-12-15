@@ -737,7 +737,6 @@ Public Class yahtzee
     'SUBROUTINES/FUNCTIONS
     '----------------------
 
-
     '-------------------------------------------------------------------------------------------------
     'Subroutine: DiceFace
     'Author: Patrick Reynolds
@@ -950,6 +949,11 @@ Public Class yahtzee
         Dim blnSmStraight As Boolean
 
         'Sorted the array to measure previous value to next value to evaluate straight
+        'There is a bug here that we couldn't get to in time
+        'When an array containing a dupe number in the middle of the small straight is rolled
+        'it will break the below logic - we likely need to figure out a way to remove dupe dice when evaluating small straight
+        'Example to test this bug: Debug (3) (4) (1) (2) (2) will be evaluated as (1, 2, 2, 3, 4) which failes below logic
+
         Array.Sort(intDiceArray)
 
         If intDiceArray(0) < intDiceArray(1) And
@@ -1017,7 +1021,6 @@ Public Class yahtzee
 
         End If
 
-
         If blnLgStraight = True Then
             lstScores.Items(13) = "L Straight" & ControlChars.Tab & ControlChars.Tab & "40"
         Else
@@ -1084,21 +1087,30 @@ Public Class yahtzee
 
     End Function
 
+    '-------------------------------------------------------------------------------------------------
+    'Function: ConvertListItemToScore
+    'Author: Patrick Reynolds
+    'Date: December 14, 2020
+    'Description: Converts the value of the specified listbox to only numerics for scoring
+    '-------------------------------------------------------------------------------------------------
     Private Function ConvertListItemToScore(strListEntry As String) As Integer
         Dim PointValue As Integer
         Dim strScore As String = ""
         Dim charArray() As Char = strListEntry.ToCharArray()
 
+        'to catch bad input from the fed values
         If strListEntry = Nothing Then
             Return 0
         End If
 
+        'Found isDigit in char (https://docs.microsoft.com/en-us/dotnet/api/system.char.isdigit?view=net-5.0#System_Char_IsDigit_System_String_System_Int32)
         For Each C As Char In charArray
             If Char.IsDigit(C) Then
                 strScore &= C
             End If
         Next
 
+        'Building up an integer based on the numerics from the string
         If IsNumeric(strScore) Then
             PointValue = CInt(strScore)
         End If
