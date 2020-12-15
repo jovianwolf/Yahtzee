@@ -484,10 +484,6 @@ Public Class yahtzee
     '-------------------------------------------------------------------------------------------------
     Private Sub btnRoll_Click(sender As Object, e As EventArgs) Handles btnRoll.Click
         Dim intDice(5) As Integer
-        'Created an array to keep all 5 roll choices after the If statements to properly populate the array
-        Dim blnDiceRoll() As Boolean = {blnRollDie1, blnRollDie2, blnRollDie3, blnRollDie4, blnRollDie5}
-        'Array of buttons to add the number tag to
-        Dim objDice() As Object = {btnRollDie1, btnRollDie2, btnRollDie3, btnRollDie4, btnRollDie5}
 
         'This is probably where we should add the cloned die facing to the held dice button row -may remove this comment later if dumb idea...
         If btnRollDie1.Visible = True Then
@@ -519,6 +515,13 @@ Public Class yahtzee
         Else
             blnRollDie5 = False
         End If
+
+        'Created an array to keep all 5 roll choices after the If statements to properly populate the array
+        Dim blnDiceRoll() As Boolean = {blnRollDie1, blnRollDie2, blnRollDie3, blnRollDie4, blnRollDie5}
+
+        'Array of buttons to add the number tag to
+        Dim objDice() As Object = {btnRollDie1, btnRollDie2, btnRollDie3, btnRollDie4, btnRollDie5}
+
 
         'This had to be a pre-test loop array to catch is player was holding on to the dice in order to work correctly
         For IntX = 0 To blnDiceRoll.Length - 1
