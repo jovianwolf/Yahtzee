@@ -827,7 +827,8 @@ Public Class yahtzee
     'Subroutine: Score3OfKind
     'Author: Patrick Reynolds
     'Date: December 13, 2020
-    'Description: Will check the array for at least 3 occurrences of any valid number and score 25 points if true.
+    'Description: Will check the array for at least 3 occurrences of any valid number and total all dice
+    ' https://www.hasbro.com/common/instruct/Yahtzee.pdf
     '-------------------------------------------------------------------------------------------------
 
     Private Sub Score3OfKind(intDiceArray)
@@ -870,7 +871,8 @@ Public Class yahtzee
     'Subroutine: Score4OfKind
     'Author: Patrick Reynolds
     'Date: December 13, 2020
-    'Description: Will check the array for at least 3 occurrences of any valid number and score 25 points if true.
+    'Description: Will check the array for at least 4 occurrences of any valid number and total all dice
+    ' https://www.hasbro.com/common/instruct/Yahtzee.pdf
     '-------------------------------------------------------------------------------------------------
 
     Private Sub Score4OfKind(intDiceArray)
@@ -1041,8 +1043,7 @@ Public Class yahtzee
     'Subroutine: ScoreYahtzee
     'Author: Patrick Reynolds
     'Date: December 07, 2020
-    'Description: Will check for yahtzee score condition from current array of dice values and apply
-    '             score to listbox (needs a rewrite for fixing end game scoring later but out of time)
+    'Description: Will check for yahtzee score condition from current array of dice values and apply score to listbox 
     '-------------------------------------------------------------------------------------------------
     Private Sub ScoreYahtzee(intDiceArray)
         'boolean used in test loop to validate if all die are the same
@@ -1077,7 +1078,6 @@ Public Class yahtzee
     'Author: Patrick Reynolds
     'Date: December 08, 2020
     'Description: Will check all dice values and add together then apply that score to listbox 
-    '             (needs a rewrite for fixing end game scoring later but out of time)
     '-------------------------------------------------------------------------------------------------
     Private Function AddFaces(intDiceArray) As Integer
         'To store the total of all die faces added up
